@@ -30,8 +30,10 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
 
   res.cookie(COOKIE_NAME, token, {
     httpOnly: true,
+    // Cross-site cookies (separate frontend/backend domains in production)
+    // require SameSite=None, which in turn requires Secure.
     secure: env.nodeEnv === "production",
-    sameSite: "lax",
+    sameSite: env.nodeEnv === "production" ? "none" : "lax",
     maxAge: COOKIE_MAX_AGE_MS,
   });
 
@@ -39,7 +41,11 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const logout = asyncHandler(async (_req: Request, res: Response) => {
-  res.clearCookie(COOKIE_NAME);
+  res.clearCookie(COOKIE_NAME, {
+    httpOnly: true,
+    secure: env.nodeEnv === "production",
+    sameSite: env.nodeEnv === "production" ? "none" : "lax",
+  });
   res.json({ success: true, data: null });
 });
 
