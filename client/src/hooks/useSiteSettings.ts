@@ -15,7 +15,7 @@ export function useSiteSettings(): SiteSettings {
   useEffect(() => {
     api
       .get<SiteSettings>("/settings")
-      .then(setSettings)
+      .then((data) => setSettings(data && data.contactPhone ? data : DEFAULT_SETTINGS))
       .catch(() => setSettings(DEFAULT_SETTINGS));
   }, []);
 
