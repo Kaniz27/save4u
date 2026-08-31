@@ -13,7 +13,10 @@ export const env = {
   mongodbUri: required("MONGODB_URI", "mongodb://127.0.0.1:27017/save4u"),
   jwtSecret: required("JWT_SECRET", "dev-only-secret-change-me"),
   jwtExpiresIn: process.env.JWT_EXPIRES_IN ?? "7d",
-  clientUrl: process.env.CLIENT_URL ?? "http://localhost:5173",
+  clientUrls: (process.env.CLIENT_URL ?? "http://localhost:5173")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean),
   nodeEnv: process.env.NODE_ENV ?? "development",
   seedAdminEmail: process.env.SEED_ADMIN_EMAIL ?? "admin@save4u.co.uk",
   seedAdminPassword: process.env.SEED_ADMIN_PASSWORD ?? "ChangeMe123!",
