@@ -19,3 +19,27 @@
 2026-08-31T21:18:56Z INF ICMP proxy will use fe80::39f9:adbe:7b2a:5733 in zone Wi-Fi as source for IPv6
 2026-08-31T21:18:56Z INF Starting metrics server on 127.0.0.1:20241/metrics
 2026-08-31T21:18:56Z INF Registered tunnel connection connIndex=0 connection=6722da47-0e31-4b4b-8b4b-2c0cf53ae620 event=0 ip=198.41.200.13 location=sin15 protocol=quic
+2026-08-31T21:19:02Z INF +----------------------------------------------------------------------------------------------------+
+2026-08-31T21:19:02Z INF |                                      CONNECTIVITY PRE-CHECKS                                       |
+2026-08-31T21:19:02Z INF +----------------------------------------------------------------------------------------------------+
+2026-08-31T21:19:02Z INF |  COMPONENT         TARGET                     STATUS  DETAILS                                      |
+2026-08-31T21:19:02Z INF |  DNS Resolution    region1.v2.argotunnel.com  PASS    DNS Resolved successfully                    |
+2026-08-31T21:19:02Z INF |  DNS Resolution    region2.v2.argotunnel.com  PASS    DNS Resolved successfully                    |
+2026-08-31T21:19:02Z INF |  UDP Connectivity  region1.v2.argotunnel.com  PASS    QUIC connection successful                   |
+2026-08-31T21:19:02Z INF |  UDP Connectivity  region2.v2.argotunnel.com  PASS    QUIC connection successful                   |
+2026-08-31T21:19:02Z INF |  TCP Connectivity  region1.v2.argotunnel.com  FAIL    HTTP/2 connection is blocked or unreachable  |
+2026-08-31T21:19:02Z INF |  TCP Connectivity  region2.v2.argotunnel.com  FAIL    HTTP/2 connection is blocked or unreachable  |
+2026-08-31T21:19:02Z INF |  Cloudflare API    api.cloudflare.com:443     PASS    API is reachable                             |
+2026-08-31T21:19:02Z INF |  WARNING: Allow outbound TCP on port 7844.                                                         |
+2026-08-31T21:19:02Z INF |  WARNING: Allow outbound TCP on port 7844.                                                         |
+2026-08-31T21:19:02Z INF |                                                                                                    |
+2026-08-31T21:19:02Z INF |  SUMMARY: Environment ready with degraded transport. cloudflared will proceed using 'quic'.        |
+2026-08-31T21:19:02Z INF +----------------------------------------------------------------------------------------------------+
+2026-08-31T21:19:02Z INF precheck component="DNS Resolution" details="DNS Resolved successfully" run_id=a841d297-0c89-41a7-bfd4-f49ccf63f3ee status=pass target=region1.v2.argotunnel.com
+2026-08-31T21:19:02Z INF precheck component="DNS Resolution" details="DNS Resolved successfully" run_id=a841d297-0c89-41a7-bfd4-f49ccf63f3ee status=pass target=region2.v2.argotunnel.com
+2026-08-31T21:19:02Z INF precheck component="UDP Connectivity" details="QUIC connection successful" run_id=a841d297-0c89-41a7-bfd4-f49ccf63f3ee status=pass target=region1.v2.argotunnel.com
+2026-08-31T21:19:02Z INF precheck component="UDP Connectivity" details="QUIC connection successful" run_id=a841d297-0c89-41a7-bfd4-f49ccf63f3ee status=pass target=region2.v2.argotunnel.com
+2026-08-31T21:19:02Z INF precheck component="TCP Connectivity" details="HTTP/2 connection is blocked or unreachable" run_id=a841d297-0c89-41a7-bfd4-f49ccf63f3ee status=fail target=region1.v2.argotunnel.com
+2026-08-31T21:19:02Z INF precheck component="TCP Connectivity" details="HTTP/2 connection is blocked or unreachable" run_id=a841d297-0c89-41a7-bfd4-f49ccf63f3ee status=fail target=region2.v2.argotunnel.com
+2026-08-31T21:19:02Z INF precheck component="Cloudflare API" details="API is reachable" run_id=a841d297-0c89-41a7-bfd4-f49ccf63f3ee status=pass target=api.cloudflare.com:443
+2026-08-31T21:19:02Z INF precheck complete hard_fail=false run_id=a841d297-0c89-41a7-bfd4-f49ccf63f3ee suggested_protocol=quic
