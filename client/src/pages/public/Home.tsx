@@ -2,6 +2,7 @@ import { HeroCarousel } from "@/components/home/HeroCarousel";
 import { TrustBar } from "@/components/home/TrustBar";
 import { AboutIntro } from "@/components/home/AboutIntro";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
+import { TrustBadges } from "@/components/home/TrustBadges";
 import { HighlightList } from "@/components/services/HighlightList";
 import { WhyChooseUsHighlights } from "@/components/home/WhyChooseUsHighlights";
 import { ReviewsCarousel } from "@/components/home/ReviewsCarousel";
@@ -48,6 +49,7 @@ export default function Home() {
       <TrustBar />
       <AboutIntro />
       <ServicesGrid />
+      <TrustBadges />
       <HighlightList
         title="Built around your business, not ours"
         subtitle="A closer look at what makes working with Save4u different."

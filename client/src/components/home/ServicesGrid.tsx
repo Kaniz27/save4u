@@ -54,7 +54,7 @@ export function ServicesGrid() {
               to={to}
               className="service-card group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:border-brand-blue/40 hover:shadow-glow"
             >
-              <div className="relative h-36 overflow-hidden">
+              <div className="relative h-44 overflow-hidden">
                 <img
                   src={image}
                   alt=""
@@ -68,9 +68,9 @@ export function ServicesGrid() {
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-heading text-lg font-bold text-slate-900">{title}</h3>
-                <p className="mt-2 flex-1 text-sm text-slate-600">{description}</p>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{description}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue-dark">
-                  Learn more <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                  Find out more <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                 </span>
               </div>
             </Link>
