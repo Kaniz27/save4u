@@ -48,7 +48,7 @@ export function ServicesDropdown({ dark }: { dark: boolean }) {
       <button
         className={classNames(
           "flex items-center gap-1 text-sm font-semibold transition-colors",
-          dark ? "text-white hover:text-brand-orange" : "text-slate-700 hover:text-brand-blue-dark",
+          dark ? "text-white hover:text-brand-blue" : "text-slate-700 hover:text-brand-blue-dark",
         )}
         aria-expanded={open}
         aria-haspopup="true"

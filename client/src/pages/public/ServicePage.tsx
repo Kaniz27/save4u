@@ -91,7 +91,7 @@ export default function ServicePage() {
       <section className="container-page py-16">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">Get Started</span>
+            <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Get Started</span>
             <h2 className="mt-3 h2-section text-slate-900">Interested in {service.name}?</h2>
             <p className="mt-4 text-slate-600">
               Fill in your details and a specialist will get back to you — no obligation, no pressure, just clear

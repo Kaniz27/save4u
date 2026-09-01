@@ -18,7 +18,7 @@ export function HighlightList({ title, subtitle, highlights, images }: Highlight
   return (
     <section className="container-page py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">Learn More</span>
+        <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Learn More</span>
         <h2 className="mt-3 h2-section text-slate-900">{title}</h2>
         {subtitle && <p className="mt-4 text-slate-600">{subtitle}</p>}
       </div>

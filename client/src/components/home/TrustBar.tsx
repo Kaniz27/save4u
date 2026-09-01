@@ -5,7 +5,7 @@ import { classNames } from "@/lib/utils";
 
 const STATS = [
   { end: 500, suffix: "+", label: "Businesses Helped", bg: "bg-brand-blue/10 border-brand-blue/20", text: "text-brand-blue-dark" },
-  { end: 2500, suffix: "K+", label: "Saved For Clients (£)", bg: "bg-brand-orange/10 border-brand-orange/20", text: "text-brand-orange-dark" },
+  { end: 2500, suffix: "K+", label: "Saved For Clients (£)", bg: "bg-sky-50 border-brand-blue/30", text: "text-brand-blue-dark" },
   { end: 48, suffix: "hr", label: "Average Funding Turnaround", bg: "bg-slate-100 border-slate-200", text: "text-brand-navy" },
   { end: 98, suffix: "%", label: "Client Satisfaction", bg: "bg-brand-blue-dark/10 border-brand-blue-dark/20", text: "text-brand-blue-dark" },
 ];

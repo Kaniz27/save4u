@@ -44,7 +44,7 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Social media link"
-                className="rounded-full border border-slate-700 p-2 text-slate-300 transition-colors hover:border-brand-orange hover:text-brand-orange"
+                className="rounded-full border border-slate-700 p-2 text-slate-300 transition-colors hover:border-brand-blue hover:text-brand-blue"
               >
                 <Icon size={16} />
               </a>
@@ -53,13 +53,13 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="relative inline-block font-heading text-sm font-bold uppercase tracking-wide text-white after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-8 after:bg-brand-orange">
+          <h3 className="relative inline-block font-heading text-sm font-bold uppercase tracking-wide text-white after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-8 after:bg-brand-blue">
             Quick Links
           </h3>
           <ul className="mt-6 space-y-3 text-sm">
             {QUICK_LINKS.map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="transition-colors hover:text-brand-orange">
+                <Link to={l.to} className="transition-colors hover:text-brand-blue">
                   {l.label}
                 </Link>
               </li>
@@ -68,13 +68,13 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="relative inline-block font-heading text-sm font-bold uppercase tracking-wide text-white after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-8 after:bg-brand-orange">
+          <h3 className="relative inline-block font-heading text-sm font-bold uppercase tracking-wide text-white after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-8 after:bg-brand-blue">
             Services
           </h3>
           <ul className="mt-6 space-y-3 text-sm">
             {SERVICE_LINKS.map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="transition-colors hover:text-brand-orange">
+                <Link to={l.to} className="transition-colors hover:text-brand-blue">
                   {l.label}
                 </Link>
               </li>
@@ -83,23 +83,23 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="relative inline-block font-heading text-sm font-bold uppercase tracking-wide text-white after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-8 after:bg-brand-orange">
+          <h3 className="relative inline-block font-heading text-sm font-bold uppercase tracking-wide text-white after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-8 after:bg-brand-blue">
             Contact Us
           </h3>
           <ul className="mt-6 space-y-4 text-sm">
             <li className="flex gap-3">
-              <MapPin size={18} className="mt-0.5 shrink-0 text-brand-orange" />
+              <MapPin size={18} className="mt-0.5 shrink-0 text-brand-blue" />
               <span>{settings.address}</span>
             </li>
             <li className="flex gap-3">
-              <Mail size={18} className="shrink-0 text-brand-orange" />
-              <a href={`mailto:${settings.contactEmail}`} className="hover:text-brand-orange">
+              <Mail size={18} className="shrink-0 text-brand-blue" />
+              <a href={`mailto:${settings.contactEmail}`} className="hover:text-brand-blue">
                 {settings.contactEmail}
               </a>
             </li>
             <li className="flex gap-3">
-              <Phone size={18} className="shrink-0 text-brand-orange" />
-              <a href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`} className="hover:text-brand-orange">
+              <Phone size={18} className="shrink-0 text-brand-blue" />
+              <a href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`} className="hover:text-brand-blue">
                 {settings.contactPhone}
               </a>
             </li>
@@ -111,13 +111,13 @@ export function Footer() {
         <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-slate-500 sm:flex-row">
           <p>© {year} Save4u. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link to="/privacy-policy" className="hover:text-brand-orange">
+            <Link to="/privacy-policy" className="hover:text-brand-blue">
               Privacy Policy
             </Link>
-            <Link to="/terms-and-condition" className="hover:text-brand-orange">
+            <Link to="/terms-and-condition" className="hover:text-brand-blue">
               Terms & Condition
             </Link>
-            <Link to="/admin/login" className="hover:text-brand-orange">
+            <Link to="/admin/login" className="hover:text-brand-blue">
               Admin Login
             </Link>
           </div>

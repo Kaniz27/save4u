@@ -6,7 +6,7 @@ import { useDashboardStats } from "@/hooks/useDashboard";
 import { StatCard } from "@/components/ui/StatCard";
 import { SERVICE_LABELS, STATUS_LABELS, STATUS_COLORS, formatDateTime } from "@/lib/utils";
 
-const PIE_COLORS = ["#4FB1E5", "#FE6B04", "#2E8FC2", "#94A3B8", "#0B1A2A"];
+const PIE_COLORS = ["#4FB1E5", "#2E8FC2", "#0B1A2A", "#7DD3FC", "#94A3B8"];
 
 export default function Dashboard() {
   usePageMeta("Admin Dashboard");
@@ -30,7 +30,7 @@ export default function Dashboard() {
     <div className="space-y-8">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard label="Total Leads" value={stats.totalLeads} icon={Users} tone="blue" />
-        <StatCard label="New This Week" value={stats.newThisWeek} icon={CalendarClock} tone="orange" />
+        <StatCard label="New This Week" value={stats.newThisWeek} icon={CalendarClock} tone="navy" />
         <StatCard label="Conversion Rate" value={`${stats.conversionRate}%`} icon={Percent} tone="navy" />
         <StatCard
           label="Converted Leads"
@@ -74,7 +74,7 @@ export default function Dashboard() {
                 <XAxis dataKey="name" tick={{ fontSize: 12 }} />
                 <YAxis allowDecimals={false} tick={{ fontSize: 12 }} />
                 <Tooltip />
-                <Bar dataKey="count" fill="#FE6B04" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="count" fill="#4FB1E5" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -84,7 +84,7 @@ export default function Dashboard() {
       <div className="glass-card overflow-hidden">
         <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
           <h3 className="font-heading text-base font-bold text-slate-900">Recent Leads</h3>
-          <Link to="/admin/leads" className="text-sm font-semibold text-brand-orange hover:underline">
+          <Link to="/admin/leads" className="text-sm font-semibold text-brand-blue-dark hover:underline">
             View all
           </Link>
         </div>

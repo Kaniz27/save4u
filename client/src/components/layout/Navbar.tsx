@@ -48,7 +48,7 @@ export function Navbar() {
                 className={classNames(
                   "text-sm font-semibold transition-colors",
                   transparent
-                    ? "text-white hover:text-brand-orange"
+                    ? "text-white hover:text-brand-blue"
                     : "text-slate-700 hover:text-brand-blue-dark",
                 )}
               >
@@ -61,7 +61,7 @@ export function Navbar() {
               className={classNames(
                 "text-sm font-semibold transition-colors",
                 transparent
-                  ? "text-white hover:text-brand-orange"
+                  ? "text-white hover:text-brand-blue"
                   : "text-slate-700 hover:text-brand-blue-dark",
               )}
             >

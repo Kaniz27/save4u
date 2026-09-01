@@ -10,7 +10,7 @@ export function RelatedServices({ services, currentSlug }: { services: Service[]
   return (
     <section className="bg-slate-50 py-20">
       <div className="container-page text-center">
-        <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">Keep Exploring</span>
+        <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Keep Exploring</span>
         <h2 className="mt-3 h2-section text-slate-900">Other ways we help</h2>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

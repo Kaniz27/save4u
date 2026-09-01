@@ -87,7 +87,7 @@ export function HeroCarousel() {
             onClick={() => setActive(i)}
             className={classNames(
               "h-2.5 rounded-full transition-all duration-300",
-              i === active ? "w-8 bg-brand-orange" : "w-2.5 bg-white/50 hover:bg-white/80",
+              i === active ? "w-8 bg-brand-blue" : "w-2.5 bg-white/50 hover:bg-white/80",
             )}
           />
         ))}

@@ -9,7 +9,7 @@ import { classNames } from "@/lib/utils";
 
 const REASON_COLORS = [
   { bg: "bg-brand-blue/10", text: "text-brand-blue-dark" },
-  { bg: "bg-brand-orange/10", text: "text-brand-orange-dark" },
+  { bg: "bg-brand-blue-dark/10", text: "text-brand-blue-dark" },
   { bg: "bg-slate-100", text: "text-brand-navy" },
 ];
 
@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
       <section className="container-page py-20">
         <div ref={introRef} className="grid items-center gap-12 md:grid-cols-2">
           <div className="intro-item">
-            <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">The Save4u Difference</span>
+            <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">The Save4u Difference</span>
             <h2 className="mt-3 h2-section text-slate-900">
               We work for you, not for a supplier's commission target
             </h2>

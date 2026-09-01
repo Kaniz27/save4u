@@ -15,7 +15,7 @@ export function WhyChooseUsHighlights() {
   return (
     <section className="container-page py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">Why Choose Us</span>
+        <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Why Choose Us</span>
         <h2 className="mt-3 h2-section text-slate-900">Built around your business, not ours</h2>
       </div>
 

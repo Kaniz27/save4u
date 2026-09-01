@@ -45,7 +45,7 @@ export function AboutIntro() {
           />
         </div>
         <div className="reveal-item">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">Welcome to Save 4u</span>
+          <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Welcome to Save 4u</span>
           <h2 className="mt-3 h2-section text-slate-900">
             Drive your success with our industry-specific excellent solutions
           </h2>

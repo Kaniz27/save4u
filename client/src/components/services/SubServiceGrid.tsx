@@ -15,7 +15,7 @@ export function SubServiceGrid({ subServices }: { subServices: SubService[] }) {
     <section className="bg-slate-50 py-20">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">
+          <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">
             Ways We Help
           </span>
           <h2 className="mt-3 h2-section text-slate-900">

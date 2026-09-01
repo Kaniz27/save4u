@@ -10,7 +10,7 @@ export function FeatureGrid({ features }: { features: ServiceFeature[] }) {
   return (
     <section className="container-page py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">Key Benefits</span>
+        <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Key Benefits</span>
         <h2 className="mt-3 h2-section text-slate-900">
           Why businesses choose this service
         </h2>

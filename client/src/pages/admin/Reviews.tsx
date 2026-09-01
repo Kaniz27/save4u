@@ -107,7 +107,7 @@ export default function Reviews() {
                   </td>
                   <td className="max-w-xs px-6 py-3 text-slate-600">{review.quote}</td>
                   <td className="px-6 py-3">
-                    <span className="flex items-center gap-1 text-brand-orange">
+                    <span className="flex items-center gap-1 text-amber-400">
                       <Star size={14} fill="currentColor" /> {review.rating}
                     </span>
                   </td>

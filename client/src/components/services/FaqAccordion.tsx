@@ -13,7 +13,7 @@ export function FaqAccordion({ faqs }: { faqs: ServiceFaq[] }) {
     <section className="bg-slate-50 py-20">
       <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-start">
         <div className="lg:sticky lg:top-28">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">FAQs</span>
+          <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">FAQs</span>
           <h2 className="mt-3 h2-section text-slate-900">Frequently asked questions</h2>
           <p className="mt-4 text-slate-600">
             Can't find the answer you're looking for? Our team is happy to talk through anything about this

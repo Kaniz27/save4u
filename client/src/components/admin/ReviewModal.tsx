@@ -82,7 +82,7 @@ export function ReviewModal({
                   type="button"
                   onClick={() => setRating(n)}
                   aria-label={`${n} star`}
-                  className="text-brand-orange"
+                  className="text-amber-400"
                 >
                   <Star size={22} fill={n <= rating ? "currentColor" : "none"} strokeWidth={1.5} />
                 </button>

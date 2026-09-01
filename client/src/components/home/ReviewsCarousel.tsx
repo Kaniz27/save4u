@@ -5,7 +5,7 @@ import { SERVICE_LABELS } from "@/lib/utils";
 
 function StarRow({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-1 text-brand-orange">
+    <div className="flex gap-1 text-amber-400">
       {Array.from({ length: 5 }).map((_, i) => (
         <Star key={i} size={16} fill={i < rating ? "currentColor" : "none"} strokeWidth={1.5} />
       ))}
@@ -23,7 +23,7 @@ export function ReviewsCarousel() {
     <section className="bg-slate-50 py-20">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">Testimonials</span>
+          <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Testimonials</span>
           <h2 className="mt-3 h2-section text-slate-900">What our clients say</h2>
         </div>
 

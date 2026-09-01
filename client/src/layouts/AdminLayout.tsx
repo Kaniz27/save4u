@@ -19,7 +19,7 @@ export function AdminLayout() {
   const { pathname } = useLocation();
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-brand-blue/5 via-slate-50 to-brand-orange/5">
+    <div className="flex min-h-screen bg-gradient-to-br from-brand-blue/5 via-slate-50 to-brand-blue-dark/5">
       <Sidebar />
       <div className="flex flex-1 flex-col">
         <Topbar title={titleFor(pathname)} />

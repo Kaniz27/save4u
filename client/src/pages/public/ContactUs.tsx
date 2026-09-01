@@ -48,7 +48,7 @@ export default function ContactUs() {
                 <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue-dark transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
                   <Icon size={22} />
                 </span>
-                <p className="mt-4 text-xs font-bold uppercase tracking-wide text-brand-orange">{label}</p>
+                <p className="mt-4 text-xs font-bold uppercase tracking-wide text-brand-blue-dark">{label}</p>
                 <p className="mt-2 text-sm text-slate-700">{value}</p>
               </>
             );
@@ -110,7 +110,7 @@ export default function ContactUs() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Social media link"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-brand-navy shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:rotate-6 hover:bg-brand-orange hover:text-white"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-brand-navy shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:rotate-6 hover:bg-brand-blue hover:text-white"
               >
                 <Icon size={18} />
               </a>

@@ -26,7 +26,7 @@ export function Sidebar() {
               classNames(
                 "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200",
                 isActive
-                  ? "bg-gradient-to-r from-brand-orange to-brand-orange-dark text-white shadow-md shadow-brand-orange/30"
+                  ? "bg-gradient-to-r from-brand-blue to-brand-blue-dark text-white shadow-md shadow-brand-blue/30"
                   : "text-slate-600 hover:bg-brand-blue/10 hover:text-brand-blue-dark",
               )
             }

@@ -88,7 +88,7 @@ export default function About() {
       <section className="container-page py-20">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="order-2 md:order-1">
-            <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">How We Work</span>
+            <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">How We Work</span>
             <h2 className="mt-3 h2-section text-slate-900">A simple process, from first call to switched supplier</h2>
             <p className="mt-5 text-slate-600">
               No lengthy sales process and no jargon — just a clear path from your first enquiry to a switch that
