@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { DynamicIcon } from "@/components/ui/DynamicIcon";
+import { SplitText } from "@/components/ui/SplitText";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { classNames, slugify } from "@/lib/utils";
 import type { SubService } from "@/types";
@@ -19,7 +20,7 @@ export function SubServiceGrid({ subServices }: { subServices: SubService[] }) {
             Ways We Help
           </span>
           <h2 className="mt-3 h2-section text-slate-900">
-            Choose the option that fits your business
+            <SplitText as="span" text="Choose the option that fits your business" trigger="scroll" />
           </h2>
         </div>
 
@@ -36,12 +37,12 @@ export function SubServiceGrid({ subServices }: { subServices: SubService[] }) {
                   <img src={sub.image} alt={sub.title} className="h-44 w-full object-cover" loading="lazy" />
                 ) : (
                   <div className="flex h-44 w-full items-center justify-center bg-brand-blue/10">
-                    <DynamicIcon name={sub.icon} size={36} className="text-brand-blue-dark" />
+                    <DynamicIcon name={sub.icon} size={64} />
                   </div>
                 )}
                 <div className="flex flex-1 flex-col p-6">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue-dark">
-                    <DynamicIcon name={sub.icon} size={18} />
+                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand-blue/10">
+                    <DynamicIcon name={sub.icon} size={32} />
                   </span>
                   <h3 className="mt-4 font-heading text-lg font-bold text-slate-900">{sub.title}</h3>
                   <p className="mt-2 text-sm text-slate-600">{sub.description}</p>

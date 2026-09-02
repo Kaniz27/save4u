@@ -1,25 +1,27 @@
 import { useState } from "react";
-import { Zap, Percent, Headphones, Users2, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { Icon8 } from "@/components/ui/Icon8";
+import { SplitText } from "@/components/ui/SplitText";
 import { classNames } from "@/lib/utils";
 
 const ITEMS = [
   {
-    icon: Zap,
+    icon: "flash-on",
     title: "Fast Setup",
     text: "Get up and running in as little as three days with our simple, guided onboarding process.",
   },
   {
-    icon: Percent,
+    icon: "percentage",
     title: "Simple, Fair Pricing",
     text: "Competitive, transparent rates with no hidden fees or long lock-in contracts.",
   },
   {
-    icon: Headphones,
+    icon: "headphones",
     title: "UK-Based Support",
     text: "Our UK-based team is available Monday to Friday to help with anything from setup to general questions.",
   },
   {
-    icon: Users2,
+    icon: "conference-call",
     title: "Never On Your Own",
     text: "One named specialist manages your account from day one, so you're never speaking to a stranger.",
   },
@@ -43,16 +45,18 @@ export function WhyUsAccordion() {
 
         <div>
           <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Why Us</span>
-          <h2 className="mt-3 h2-section text-slate-900">Why Choose Our Services</h2>
+          <h2 className="mt-3 h2-section text-slate-900">
+            <SplitText as="span" text="Why Choose Our Services" trigger="scroll" />
+          </h2>
 
           <div className="mt-8 flex flex-col gap-3">
-            {ITEMS.map(({ icon: Icon, title, text }, i) => {
+            {ITEMS.map(({ icon, title, text }, i) => {
               const isOpen = openIndex === i;
               return (
                 <div
                   key={title}
                   className={classNames(
-                    "overflow-hidden rounded-2xl transition-colors",
+                    "overflow-hidden rounded-2xl transition-all duration-300 active:scale-[0.98]",
                     isOpen ? "bg-brand-blue/10" : "bg-brand-bg hover:bg-brand-blue/10",
                   )}
                 >
@@ -62,8 +66,13 @@ export function WhyUsAccordion() {
                     className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                   >
                     <span className="flex items-center gap-4">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-brand-blue-dark shadow-sm">
-                        <Icon size={18} />
+                      <span
+                        className={classNames(
+                          "flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm transition-transform duration-300",
+                          isOpen && "scale-110",
+                        )}
+                      >
+                        <Icon8 slug={icon} alt={title} size={48} className="h-8 w-8" />
                       </span>
                       <span className="font-heading text-base font-bold text-slate-900 sm:text-lg">{title}</span>
                     </span>
@@ -79,7 +88,7 @@ export function WhyUsAccordion() {
                     )}
                   >
                     <div className="overflow-hidden px-6">
-                      <p className="pb-5 pl-14 text-sm text-slate-600">{text}</p>
+                      <p className="pb-5 pl-[4.5rem] text-sm text-slate-600">{text}</p>
                     </div>
                   </div>
                 </div>

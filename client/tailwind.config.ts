@@ -29,6 +29,15 @@ export default {
         "brand-gradient": "linear-gradient(135deg, #4DA3FF 0%, #2E7FD9 100%)",
         "cta-gradient": "linear-gradient(135deg, #4DA3FF 0%, #67B7FF 100%)",
       },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 28s linear infinite",
+      },
     },
   },
   plugins: [],

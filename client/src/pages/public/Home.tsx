@@ -1,5 +1,6 @@
 import { HomeHero } from "@/components/home/HomeHero";
 import { HomeServicesGrid } from "@/components/home/HomeServicesGrid";
+import { PartnersMarquee } from "@/components/home/PartnersMarquee";
 import { WhyUsAccordion } from "@/components/home/WhyUsAccordion";
 import { HomeFaqSection } from "@/components/home/HomeFaqSection";
 import { CtaBanner } from "@/components/home/CtaBanner";
@@ -24,6 +25,7 @@ export default function Home() {
     <>
       <HomeHero />
       <HomeServicesGrid />
+      <PartnersMarquee />
       <WhyUsAccordion />
       <HomeFaqSection faqs={HOME_FAQS} />
       <CtaBanner

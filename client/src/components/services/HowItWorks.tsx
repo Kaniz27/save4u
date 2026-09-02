@@ -1,3 +1,4 @@
+import { SplitText } from "@/components/ui/SplitText";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import type { ServiceStep } from "@/types";
 
@@ -12,7 +13,7 @@ export function HowItWorks({ steps }: { steps: ServiceStep[] }) {
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">How It Works</span>
           <h2 className="mt-3 h2-section text-slate-900">
-            Getting started is simple
+            <SplitText as="span" text="Getting started is simple" trigger="scroll" />
           </h2>
         </div>
 

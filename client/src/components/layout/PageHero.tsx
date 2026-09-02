@@ -1,9 +1,9 @@
-import type { ReactNode } from "react";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { SplitText } from "@/components/ui/SplitText";
 
 interface PageHeroProps {
-  heading: ReactNode;
+  heading: string | string[];
   bullets: string[];
   image: string;
   imageAlt: string;
@@ -13,6 +13,8 @@ interface PageHeroProps {
 }
 
 export function PageHero({ heading, bullets, image, imageAlt, ctaLabel, ctaTo, imageFit = "cover" }: PageHeroProps) {
+  const lines = Array.isArray(heading) ? heading : [heading];
+
   return (
     <section className="relative overflow-hidden bg-brand-bg">
       <div
@@ -26,7 +28,11 @@ export function PageHero({ heading, bullets, image, imageAlt, ctaLabel, ctaTo, i
 
       <div className="container-page relative grid gap-0 lg:grid-cols-2">
         <div className="py-16 lg:max-w-xl lg:py-24">
-          <h1 className="h1-hero text-slate-900">{heading}</h1>
+          <h1 className="h1-hero text-slate-900">
+            {lines.map((line, i) => (
+              <SplitText key={i} as="span" text={line} className="block" delay={0.1 + i * 0.2} />
+            ))}
+          </h1>
           <ul className="mt-7 space-y-3.5">
             {bullets.map((bullet) => (
               <li key={bullet} className="flex items-center gap-3 text-base font-medium text-slate-700">

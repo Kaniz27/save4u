@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
+import { SplitText } from "@/components/ui/SplitText";
 import { classNames } from "@/lib/utils";
 import type { ServiceFaq } from "@/types";
 
@@ -13,7 +14,9 @@ export function HomeFaqSection({ faqs }: { faqs: ServiceFaq[] }) {
       <div className="container-page grid gap-14 lg:grid-cols-[1.2fr_1fr] lg:items-start">
         <div>
           <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">FAQ</span>
-          <h2 className="mt-3 h2-section text-slate-900">Frequently Asked Questions</h2>
+          <h2 className="mt-3 h2-section text-slate-900">
+            <SplitText as="span" text="Frequently Asked Questions" trigger="scroll" />
+          </h2>
           <p className="mt-4 max-w-md text-slate-600">
             Got questions about our card machines, funding, energy switching, or marketing services? Here are the
             answers to what business owners ask us most.

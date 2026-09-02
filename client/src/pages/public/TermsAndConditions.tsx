@@ -1,6 +1,7 @@
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CtaBanner } from "@/components/home/CtaBanner";
+import { SplitText } from "@/components/ui/SplitText";
 
 export default function TermsAndConditions() {
   usePageMeta("Terms & Condition", "Terms and conditions for using the Save4u website and services.");
@@ -19,7 +20,9 @@ export default function TermsAndConditions() {
       />
       <div className="container-page relative">
         <span className="text-sm font-bold uppercase tracking-wide text-white/80">Save4u</span>
-        <h1 className="mt-3 h1-hero">Terms & Condition</h1>
+        <h1 className="mt-3 h1-hero">
+          <SplitText as="span" text="Terms & Condition" />
+        </h1>
       </div>
     </section>
     <section className="container-page py-20">

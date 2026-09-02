@@ -1,4 +1,3 @@
-import { ShieldCheck, Clock, PiggyBank, Users2, HeadphonesIcon, Award } from "lucide-react";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { CtaBanner } from "@/components/home/CtaBanner";
@@ -6,7 +5,9 @@ import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { FaqAccordion } from "@/components/services/FaqAccordion";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
+import { Icon8 } from "@/components/ui/Icon8";
 import { PageHero } from "@/components/layout/PageHero";
+import { SplitText } from "@/components/ui/SplitText";
 import { classNames } from "@/lib/utils";
 import type { ServiceFaq } from "@/types";
 
@@ -26,12 +27,12 @@ const REASON_COLORS = [
 ];
 
 const REASONS = [
-  { icon: ShieldCheck, title: "Trusted Experts", text: "Years of combined experience across payments, energy, funding and marketing, all under one roof." },
-  { icon: Clock, title: "Fast Turnaround", text: "From first enquiry to a live quote in days — we know time matters when you're running a business." },
-  { icon: PiggyBank, title: "Real, Measurable Savings", text: "Every recommendation is backed by a whole-of-market comparison, not a single preferred supplier." },
-  { icon: Users2, title: "One Dedicated Contact", text: "No call centres or ticket queues — a named specialist manages your account from day one." },
-  { icon: HeadphonesIcon, title: "UK-Based Support", text: "Our support team is based in the UK and available when you actually need to speak to someone." },
-  { icon: Award, title: "No Hidden Fees", text: "Transparent pricing on everything we recommend, with nothing buried in the small print." },
+  { icon: "security-checked", title: "Trusted Experts", text: "Years of combined experience across payments, energy, funding and marketing, all under one roof." },
+  { icon: "clock", title: "Fast Turnaround", text: "From first enquiry to a live quote in days — we know time matters when you're running a business." },
+  { icon: "coins", title: "Real, Measurable Savings", text: "Every recommendation is backed by a whole-of-market comparison, not a single preferred supplier." },
+  { icon: "conference-call", title: "One Dedicated Contact", text: "No call centres or ticket queues — a named specialist manages your account from day one." },
+  { icon: "headphones", title: "UK-Based Support", text: "Our support team is based in the UK and available when you actually need to speak to someone." },
+  { icon: "prize", title: "No Hidden Fees", text: "Transparent pricing on everything we recommend, with nothing buried in the small print." },
 ];
 
 export default function WhyChooseUs() {
@@ -43,13 +44,7 @@ export default function WhyChooseUs() {
     <>
       <Breadcrumb current="Why Choose Us" />
       <PageHero
-        heading={
-          <>
-            The Partner UK Businesses
-            <br />
-            Trust to Save and Grow
-          </>
-        }
+        heading={["The Partner UK Businesses", "Trust to Save and Grow"]}
         bullets={WHY_BULLETS}
         image="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
         imageAlt="Save4u client reviewing their savings with a specialist"
@@ -62,7 +57,7 @@ export default function WhyChooseUs() {
           <div className="intro-item">
             <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">The Save4u Difference</span>
             <h2 className="mt-3 h2-section text-slate-900">
-              We work for you, not for a supplier's commission target
+              <SplitText as="span" text="We work for you, not for a supplier's commission target" trigger="scroll" />
             </h2>
             <p className="mt-5 text-slate-600">
               Most brokers push whichever supplier pays them the most. We compare the whole market,
@@ -92,20 +87,24 @@ export default function WhyChooseUs() {
       <section className="bg-brand-bg py-20">
         <div className="container-page">
           <div ref={ref} className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {REASONS.map(({ icon: Icon, title, text }, i) => {
+            {REASONS.map(({ icon, title, text }, i) => {
               const color = REASON_COLORS[i % REASON_COLORS.length];
               return (
-              <div key={title} className="reason-card glass-card group p-8">
+              <div
+                key={title}
+                className="reason-card glass-card group cursor-default p-8 hover:bg-white hover:shadow-glow-blue active:scale-95"
+              >
                 <span
                   className={classNames(
-                    "flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110",
+                    "flex h-20 w-20 items-center justify-center rounded-2xl transition-all duration-300 group-hover:-rotate-6 group-hover:scale-110",
                     color.bg,
-                    color.text,
                   )}
                 >
-                  <Icon size={24} />
+                  <Icon8 slug={icon} alt={title} size={64} className="h-11 w-11" />
                 </span>
-                <h3 className="mt-5 font-heading text-lg font-bold text-slate-900">{title}</h3>
+                <h3 className="mt-5 font-heading text-lg font-bold text-slate-900 transition-colors duration-300 group-hover:text-brand-blue-dark">
+                  {title}
+                </h3>
                 <p className="mt-3 text-sm text-slate-600">{text}</p>
               </div>
               );

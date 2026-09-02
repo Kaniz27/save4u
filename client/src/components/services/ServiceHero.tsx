@@ -1,22 +1,10 @@
 import type { ReactNode } from "react";
-import {
-  ArrowRight,
-  Check,
-  CreditCard,
-  Globe,
-  Monitor,
-  Wifi,
-  Smartphone,
-  Wallet,
-  ShieldCheck,
-  Zap,
-  Search,
-  Users,
-  TrendingUp,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Check, Search, Users, TrendingUp, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/Button";
+import { Icon8 } from "@/components/ui/Icon8";
+import { SplitText } from "@/components/ui/SplitText";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import type { Service } from "@/types";
 
 const HEADINGS: Record<string, string> = {
@@ -38,14 +26,14 @@ const BADGES: Record<string, string> = {
 };
 
 const PAYMENT_FEATURES = [
-  { icon: CreditCard, label: "Card Machines" },
-  { icon: Globe, label: "Online Payments" },
-  { icon: Monitor, label: "EPOS" },
-  { icon: Wifi, label: "Contactless" },
-  { icon: Smartphone, label: "Apple Pay" },
-  { icon: Wallet, label: "Google Pay" },
-  { icon: ShieldCheck, label: "Secure Checkout" },
-  { icon: Zap, label: "Next-Day Settlement" },
+  { icon: "bank-cards", label: "Card Machines" },
+  { icon: "globe-earth", label: "Online Payments" },
+  { icon: "monitor", label: "EPOS" },
+  { icon: "wifi", label: "Contactless" },
+  { icon: "smartphone", label: "Apple Pay" },
+  { icon: "wallet", label: "Google Pay" },
+  { icon: "security-checked", label: "Secure Checkout" },
+  { icon: "flash-on", label: "Next-Day Settlement" },
 ];
 
 const FUNDING_STEPS = [
@@ -89,6 +77,7 @@ function EnquiryCta({ children, className = "" }: { children: ReactNode; classNa
 
 function PaymentHero({ service }: { service: Service }) {
   const bullets = service.features.slice(0, 3).map((f) => f.title);
+  const ref = useScrollReveal<HTMLDivElement>({ selector: ".payment-feature" });
   return (
     <section className="relative overflow-hidden bg-brand-bg">
       <div className="pointer-events-none absolute -left-20 top-16 h-72 w-72 rounded-full bg-brand-blue/25 blur-3xl" />
@@ -97,7 +86,9 @@ function PaymentHero({ service }: { service: Service }) {
       <div className="container-page relative grid gap-12 py-20 lg:grid-cols-2 lg:items-center lg:py-24">
         <div>
           <Badge label={BADGES.payment} />
-          <h1 className="h1-hero mt-6 text-brand-navy">{HEADINGS.payment}</h1>
+          <h1 className="h1-hero mt-6 text-brand-navy">
+            <SplitText as="span" text={HEADINGS.payment} />
+          </h1>
           <p className="mt-5 max-w-xl text-slate-600">{service.description}</p>
           <Bullets items={bullets} />
           <EnquiryCta className="mt-9 shadow-md">
@@ -119,13 +110,18 @@ function PaymentHero({ service }: { service: Service }) {
       </div>
 
       <div className="container-page pb-16">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
-          {PAYMENT_FEATURES.map(({ icon: Icon, label }) => (
-            <div key={label} className="flex flex-col items-center gap-2 rounded-2xl border border-brand-border bg-white/70 p-4 text-center">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue-dark">
-                <Icon size={18} />
+        <div ref={ref} className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
+          {PAYMENT_FEATURES.map(({ icon, label }) => (
+            <div
+              key={label}
+              className="payment-feature group flex cursor-default flex-col items-center gap-2 rounded-2xl border border-brand-border bg-white/70 p-4 text-center transition-[transform,box-shadow,background-color,border-color] duration-300 hover:-translate-y-1.5 hover:border-brand-blue/40 hover:bg-brand-blue hover:shadow-glow-blue active:scale-95"
+            >
+              <span className="flex h-16 w-16 items-center justify-center rounded-xl bg-brand-blue/10 transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
+                <Icon8 slug={icon} alt={label} size={64} className="h-10 w-10" />
               </span>
-              <span className="text-xs font-semibold text-brand-navy">{label}</span>
+              <span className="text-xs font-semibold text-brand-navy transition-colors duration-300 group-hover:text-white">
+                {label}
+              </span>
             </div>
           ))}
         </div>
@@ -144,7 +140,9 @@ function FundingHero({ service }: { service: Service }) {
       <div className="container-page relative grid gap-12 py-20 lg:grid-cols-2 lg:items-center lg:py-24">
         <div>
           <Badge label={BADGES.funding} />
-          <h1 className="h1-hero mt-6 text-brand-navy">{HEADINGS.funding}</h1>
+          <h1 className="h1-hero mt-6 text-brand-navy">
+            <SplitText as="span" text={HEADINGS.funding} />
+          </h1>
           <p className="mt-5 max-w-xl text-slate-600">{SUBTEXT.funding}</p>
           <Bullets items={bullets} />
           <div className="mt-9 flex flex-wrap gap-4">
@@ -200,7 +198,9 @@ function MarketingHero({ service }: { service: Service }) {
       <div className="container-page relative grid gap-12 py-20 lg:grid-cols-2 lg:items-center lg:py-24">
         <div>
           <Badge label={BADGES.marketing} />
-          <h1 className="h1-hero mt-6 text-brand-navy">{HEADINGS.marketing}</h1>
+          <h1 className="h1-hero mt-6 text-brand-navy">
+            <SplitText as="span" text={HEADINGS.marketing} />
+          </h1>
           <p className="mt-5 max-w-xl text-slate-600">{SUBTEXT.marketing}</p>
           <Bullets items={bullets} />
           <div className="mt-9 flex flex-wrap gap-4">

@@ -1,4 +1,3 @@
-import { Target, Heart, Rocket } from "lucide-react";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { CtaBanner } from "@/components/home/CtaBanner";
@@ -6,7 +5,9 @@ import { TrustBadges } from "@/components/home/TrustBadges";
 import { HowItWorks } from "@/components/services/HowItWorks";
 import { FaqAccordion } from "@/components/services/FaqAccordion";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { Icon8 } from "@/components/ui/Icon8";
 import { PageHero } from "@/components/layout/PageHero";
+import { SplitText } from "@/components/ui/SplitText";
 import type { ServiceStep, ServiceFaq } from "@/types";
 
 const ABOUT_BULLETS = [
@@ -16,9 +17,9 @@ const ABOUT_BULLETS = [
 ];
 
 const VALUES = [
-  { icon: Target, title: "Our Mission", text: "To be the single, trusted place UK businesses turn to for the essentials that keep them running lean and profitable." },
-  { icon: Heart, title: "Our Approach", text: "Honest comparisons, clear pricing, and no pressure — we only recommend a switch when it genuinely benefits you." },
-  { icon: Rocket, title: "Our Promise", text: "Fast turnarounds and a dedicated point of contact from your first enquiry through to ongoing support." },
+  { icon: "target", title: "Our Mission", text: "To be the single, trusted place UK businesses turn to for the essentials that keep them running lean and profitable." },
+  { icon: "heart-with-pulse", title: "Our Approach", text: "Honest comparisons, clear pricing, and no pressure — we only recommend a switch when it genuinely benefits you." },
+  { icon: "rocket", title: "Our Promise", text: "Fast turnarounds and a dedicated point of contact from your first enquiry through to ongoing support." },
 ];
 
 const HOW_WE_WORK: ServiceStep[] = [
@@ -43,13 +44,7 @@ export default function About() {
     <>
       <Breadcrumb current="About Us" />
       <PageHero
-        heading={
-          <>
-            End-to-End Business
-            <br />
-            Solutions, One Team
-          </>
-        }
+        heading={["End-to-End Business", "Solutions, One Team"]}
         bullets={ABOUT_BULLETS}
         image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
         imageAlt="Save4u team member reviewing a client's business costs"
@@ -66,7 +61,9 @@ export default function About() {
             loading="lazy"
           />
           <div>
-            <h2 className="h2-section text-slate-900">Who we are</h2>
+            <h2 className="h2-section text-slate-900">
+              <SplitText as="span" text="Who we are" trigger="scroll" />
+            </h2>
             <p className="mt-5 text-slate-600">
               Save4u was founded to remove the hassle of comparing and managing the suppliers every
               business depends on. Instead of juggling separate providers for card payments,
@@ -84,12 +81,17 @@ export default function About() {
 
       <section className="container-page py-20">
         <div ref={ref} className="grid gap-8 md:grid-cols-3">
-          {VALUES.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="value-card glass-card group p-8 text-center">
-              <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue-dark transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
-                <Icon size={24} />
+          {VALUES.map(({ icon, title, text }) => (
+            <div
+              key={title}
+              className="value-card glass-card group cursor-default p-8 text-center hover:shadow-glow-blue hover:bg-white active:scale-95"
+            >
+              <span className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-brand-blue/10 transition-all duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:bg-brand-blue/20">
+                <Icon8 slug={icon} alt={title} size={64} className="h-11 w-11" />
               </span>
-              <h3 className="mt-5 font-heading text-lg font-bold text-slate-900">{title}</h3>
+              <h3 className="mt-5 font-heading text-lg font-bold text-slate-900 transition-colors duration-300 group-hover:text-brand-blue-dark">
+                {title}
+              </h3>
               <p className="mt-3 text-sm text-slate-600">{text}</p>
             </div>
           ))}

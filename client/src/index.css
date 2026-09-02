@@ -34,6 +34,6 @@
   }
 
   .glass-card {
-    @apply rounded-2xl border border-white/60 bg-white/70 shadow-sm backdrop-blur-md transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:border-brand-blue/30 hover:shadow-xl;
+    @apply rounded-2xl border border-white/60 bg-white/70 shadow-sm backdrop-blur-md transition-[transform,box-shadow,border-color,background-color] duration-300 hover:-translate-y-1.5 hover:border-brand-blue/30 hover:shadow-xl;
   }
 }

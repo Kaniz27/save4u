@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { DynamicIcon } from "@/components/ui/DynamicIcon";
+import { SplitText } from "@/components/ui/SplitText";
 import type { Service } from "@/types";
 
 export function RelatedServices({ services, currentSlug }: { services: Service[]; currentSlug: string }) {
@@ -11,7 +12,9 @@ export function RelatedServices({ services, currentSlug }: { services: Service[]
     <section className="bg-brand-bg py-20">
       <div className="container-page text-center">
         <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Keep Exploring</span>
-        <h2 className="mt-3 h2-section text-slate-900">Other ways we help</h2>
+        <h2 className="mt-3 h2-section text-slate-900">
+          <SplitText as="span" text="Other ways we help" trigger="scroll" />
+        </h2>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           {related.map((s) => (

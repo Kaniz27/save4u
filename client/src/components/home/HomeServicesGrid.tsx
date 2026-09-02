@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SplitText } from "@/components/ui/SplitText";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const SERVICES = [
@@ -37,7 +38,9 @@ export function HomeServicesGrid() {
       <div className="container-page">
         <div className="mx-auto max-w-xl text-center">
           <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Our Services</span>
-          <h2 className="mt-3 h2-section text-slate-900">Everything Your Business Needs</h2>
+          <h2 className="mt-3 h2-section text-slate-900">
+            <SplitText as="span" text="Everything Your Business Needs" trigger="scroll" />
+          </h2>
           <p className="mt-4 text-slate-600">
             Four powerful services designed to help your business accept payments, grow online, cut costs, and access
             funding — all in one place.
@@ -48,12 +51,14 @@ export function HomeServicesGrid() {
           {SERVICES.map(({ to, title, description, image }) => (
             <div
               key={to}
-              className="home-service-card flex flex-col items-center rounded-2xl bg-white p-8 text-center shadow-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-glow-blue"
+              className="home-service-card group flex flex-col items-center rounded-2xl border border-transparent bg-white p-8 text-center shadow-sm transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:border-brand-blue/30 hover:shadow-glow-blue active:scale-95"
             >
-              <span className="mb-6 h-28 w-28 overflow-hidden rounded-full bg-brand-blue/10">
+              <span className="mb-6 h-28 w-28 overflow-hidden rounded-full bg-brand-blue/10 transition-transform duration-300 group-hover:scale-105">
                 <img src={image} alt={title} className="h-full w-full object-cover" loading="lazy" />
               </span>
-              <h3 className="font-heading text-lg font-bold text-slate-900">{title}</h3>
+              <h3 className="font-heading text-lg font-bold text-slate-900 transition-colors duration-300 group-hover:text-brand-blue-dark">
+                {title}
+              </h3>
               <p className="mt-3 min-h-[60px] text-sm text-slate-600">{description}</p>
               <Link
                 to={to}

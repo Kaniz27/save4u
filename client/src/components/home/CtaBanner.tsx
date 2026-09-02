@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button";
+import { SplitText } from "@/components/ui/SplitText";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { classNames } from "@/lib/utils";
 
@@ -34,7 +35,9 @@ export function CtaBanner({
     >
       {image && <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/60 to-brand-blue-dark/50" />}
       <div className="container-page relative">
-        <h2 className="h2-section text-white">{title}</h2>
+        <h2 className="h2-section text-white">
+          <SplitText as="span" text={title} trigger="scroll" />
+        </h2>
         <p className="mx-auto mt-4 max-w-xl text-white/90">{subtitle}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Button to={ctaTo}>{ctaLabel}</Button>

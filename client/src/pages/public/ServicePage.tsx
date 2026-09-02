@@ -13,6 +13,7 @@ import { FaqAccordion } from "@/components/services/FaqAccordion";
 import { LeadForm } from "@/components/services/LeadForm";
 import { RelatedServices } from "@/components/services/RelatedServices";
 import { CtaBanner } from "@/components/home/CtaBanner";
+import { SplitText } from "@/components/ui/SplitText";
 import type { ServiceInterest } from "@/types";
 
 const ENQUIRY_POINTS = [
@@ -100,7 +101,9 @@ export default function ServicePage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Get Started</span>
-            <h2 className="mt-3 h2-section text-slate-900">Interested in {service.name}?</h2>
+            <h2 className="mt-3 h2-section text-slate-900">
+              <SplitText as="span" text={`Interested in ${service.name}?`} trigger="scroll" />
+            </h2>
             <p className="mt-4 text-slate-600">
               Fill in your details and a specialist will get back to you — no obligation, no pressure, just clear
               advice on whether {service.name.toLowerCase()} makes sense for your business.
