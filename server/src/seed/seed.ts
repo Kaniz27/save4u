@@ -14,7 +14,8 @@ const services = [
     name: "Payment Solution",
     tagline: "Smarter Payment Solutions for growing businesses",
     icon: "CreditCard",
-    heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80",
+    heroImage:
+      "https://www.takepayments.com/media/ubdai32q/homepage_refresh_desktop_banner_-gp_blue-2x.jpg?mode=crop&width=1500&height=475&format=webp&quality=90",
     description:
       "Save4u helps UK businesses accept payments faster and cheaper, with transparent card processing rates, next-day settlement, and hardware that fits your business — from countertop terminals to fully integrated ecommerce checkouts.",
     features: [
@@ -81,6 +82,7 @@ const services = [
       },
     ],
     ctaImage: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1600&q=80",
+    layoutVariant: "payment",
   },
   {
     slug: "business-energy",
@@ -227,6 +229,7 @@ const services = [
       },
     ],
     ctaImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80",
+    layoutVariant: "funding",
   },
   {
     slug: "digital-marketing",
@@ -272,11 +275,35 @@ const services = [
       },
       {
         icon: "Target",
-        title: "Paid & Social Advertising",
+        title: "Google Ads",
         image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=900&q=80",
-        description: "Targeted Google and social ad campaigns, managed for measurable return on spend.",
+        description: "Targeted Google ad campaigns, managed for measurable return on spend.",
         detail:
           "Campaigns are built around a clear goal — leads, bookings, or sales — with budget shifted toward whatever's actually converting, reported back to you in plain terms.",
+      },
+      {
+        icon: "Share2",
+        title: "Social Media Marketing",
+        image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=900&q=80",
+        description: "Content and community management across the platforms your customers actually use.",
+        detail:
+          "From content calendars to paid social campaigns, we build a presence that builds trust — and turns followers into enquiries.",
+      },
+      {
+        icon: "Users",
+        title: "Lead Generation",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+        description: "Campaigns built to fill your pipeline with people ready to buy, not just visitors.",
+        detail:
+          "We target by location, interest and behaviour, so your budget reaches the people most likely to enquire — with every lead tracked back to the campaign that won it.",
+      },
+      {
+        icon: "TrendingUp",
+        title: "Conversion Optimisation",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        description: "Turn more of your existing traffic into enquiries, without spending more on ads.",
+        detail:
+          "We test and refine your pages, forms and calls to action so the traffic you're already paying for converts at a higher rate.",
       },
     ],
     highlights: [
@@ -300,7 +327,9 @@ const services = [
       },
     ],
     ctaImage: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1600&q=80",
+    layoutVariant: "marketing",
   },
+
 ];
 
 const reviews = [
@@ -308,6 +337,7 @@ const reviews = [
   { clientName: "Priya Shah", companyName: "Shah Dental Practice", rating: 5, quote: "The energy switch was completely hassle-free and saved us a genuine amount on our annual bill.", serviceUsed: "business-energy", isPublished: true },
   { clientName: "Marcus Webb", companyName: "Webb's Coffee House", rating: 4, quote: "The cash advance gave us the funds to refit the shop without touching our savings. Repayments flex with trade which really helps.", serviceUsed: "merchant-cash-advance", isPublished: true },
   { clientName: "Olivia Bennett", companyName: "Bennett Interiors", rating: 5, quote: "Our enquiries have grown steadily since Save4u took over our SEO and social media.", serviceUsed: "digital-marketing", isPublished: true },
+
 ];
 
 async function seed() {

@@ -1,11 +1,96 @@
-import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, MessageSquare, Headset, Check } from "lucide-react";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { LeadForm } from "@/components/services/LeadForm";
+import { TrustBadges } from "@/components/home/TrustBadges";
+import { FaqAccordion } from "@/components/services/FaqAccordion";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import type { ServiceFaq } from "@/types";
+
+const CONTACT_BULLETS = ["We reply within one working day", "No cost, no obligation to switch", "Speak directly to a specialist"];
+
+function ContactHero() {
+  return (
+    <section className="relative overflow-hidden bg-brand-bg">
+      <div className="pointer-events-none absolute -left-20 top-0 h-72 w-72 rounded-full bg-brand-blue/25 blur-3xl" />
+      <div className="pointer-events-none absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-brand-orange/15 blur-3xl" />
+
+      <div className="container-page relative grid gap-12 py-20 lg:grid-cols-2 lg:items-center lg:py-24">
+        <div>
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-blue/30 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-blue-dark shadow-sm backdrop-blur-sm">
+            <MessageSquare size={14} />
+            Get In Touch
+          </span>
+          <h1 className="h1-hero mt-6 text-brand-navy">
+            Let's Talk About
+            <br />
+            Your Business
+          </h1>
+          <p className="mt-5 max-w-xl text-slate-600">
+            Tell us what you're looking to improve and our team will help you find the right solution.
+          </p>
+          <ul className="mt-7 space-y-3.5">
+            {CONTACT_BULLETS.map((bullet) => (
+              <li key={bullet} className="flex items-center gap-3 text-base font-medium text-slate-700">
+                <Check size={20} strokeWidth={3} className="shrink-0 text-brand-blue-dark" />
+                {bullet}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#contact-form"
+            className="mt-9 inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-orange-dark hover:shadow-glow hover:scale-[1.03]"
+          >
+            Send a Message
+          </a>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white bg-white p-8 shadow-xl">
+            <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-brand-gradient opacity-20 blur-2xl" />
+            <div className="flex items-center gap-3 border-b border-brand-border pb-4">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue-dark">
+                <Headset size={20} />
+              </span>
+              <div>
+                <p className="font-heading text-sm font-bold text-brand-navy">Talk to a Specialist</p>
+                <p className="text-xs text-slate-500">Usually replies within an hour</p>
+              </div>
+            </div>
+            <div className="mt-4 space-y-3">
+              <div className="ml-auto max-w-[85%] rounded-2xl rounded-tr-sm bg-brand-blue/10 px-4 py-2.5 text-sm text-brand-navy">
+                Hi — I'd like a quote for card payments and business funding.
+              </div>
+              <div className="mr-auto max-w-[85%] rounded-2xl rounded-tl-sm bg-brand-bg px-4 py-2.5 text-sm text-brand-navy">
+                Happy to help! I'll have a specialist call you within one working day.
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-card absolute -right-4 -top-4 flex items-center gap-3 p-3.5 sm:-right-8">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-orange/15 text-brand-orange">
+              <Mail size={16} />
+            </span>
+            <p className="font-heading text-xs font-bold text-brand-navy">Reply in 1 working day</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const CONTACT_FAQS: ServiceFaq[] = [
+  { question: "How quickly will you get back to me?", answer: "We respond to every enquiry within one working day, usually much sooner." },
+  { question: "What details do I need to provide?", answer: "Just your name, contact details and a short message about what you're looking for — we'll take it from there." },
+  { question: "Can I request a call back instead?", answer: "Yes — mention a good time to call in your message and a specialist will ring you directly." },
+  { question: "Is there any cost or obligation to get in touch?", answer: "None — getting in touch is completely free, with no obligation to switch anything." },
+];
 
 export default function ContactUs() {
-  usePageMeta("Contact Us", "Get in touch with the Save4u team — payments, energy, funding and marketing enquiries welcome.");
+  usePageMeta(
+    "Contact Our Business Growth Team",
+    "Get in touch with the Save4u team — payments, funding and marketing enquiries welcome.",
+  );
   const settings = useSiteSettings();
 
   const INFO_CARDS = [
@@ -25,22 +110,9 @@ export default function ContactUs() {
   return (
     <>
       <Breadcrumb current="Contact Us" />
-      <section className="relative flex min-h-[50vh] items-center overflow-hidden bg-brand-gradient py-16 text-center text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-25"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=80)",
-          }}
-          aria-hidden
-        />
-        <div className="container-page relative">
-          <span className="text-sm font-bold uppercase tracking-wide text-white/80">Contact Us</span>
-          <h1 className="mt-3 h1-hero">Let's talk about your business</h1>
-        </div>
-      </section>
+      <ContactHero />
 
-      <section className="container-page py-16">
+      <section id="contact-form" className="container-page py-16">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {INFO_CARDS.map(({ icon: Icon, label, value, href }) => {
             const content = (
@@ -77,6 +149,10 @@ export default function ContactUs() {
           </div>
         </div>
       </section>
+
+      <TrustBadges />
+
+      <FaqAccordion faqs={CONTACT_FAQS} />
 
       <section
         className="relative bg-fixed bg-cover bg-center py-24 text-center text-white"

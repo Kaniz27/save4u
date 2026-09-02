@@ -10,7 +10,7 @@ export function FaqAccordion({ faqs }: { faqs: ServiceFaq[] }) {
   if (faqs.length === 0) return null;
 
   return (
-    <section className="bg-slate-50 py-20">
+    <section className="bg-brand-bg py-20">
       <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-start">
         <div className="lg:sticky lg:top-28">
           <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">FAQs</span>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { DynamicIcon } from "@/components/ui/DynamicIcon";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { classNames } from "@/lib/utils";
+import { classNames, slugify } from "@/lib/utils";
 import type { SubService } from "@/types";
 
 export function SubServiceGrid({ subServices }: { subServices: SubService[] }) {
@@ -12,7 +12,7 @@ export function SubServiceGrid({ subServices }: { subServices: SubService[] }) {
   if (subServices.length === 0) return null;
 
   return (
-    <section className="bg-slate-50 py-20">
+    <section className="bg-brand-bg py-20">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">
@@ -29,7 +29,8 @@ export function SubServiceGrid({ subServices }: { subServices: SubService[] }) {
             return (
               <div
                 key={sub.title}
-                className="subservice-card glass-card flex flex-col overflow-hidden"
+                id={slugify(sub.title)}
+                className="subservice-card glass-card flex flex-col overflow-hidden scroll-mt-32"
               >
                 {sub.image ? (
                   <img src={sub.image} alt={sub.title} className="h-44 w-full object-cover" loading="lazy" />

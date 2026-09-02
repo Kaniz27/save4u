@@ -9,7 +9,7 @@ const LINKS = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
   { to: "/why-choose-us", label: "Why Choose Us" },
-  { to: "/payment-solution", label: "Payment Solution" },
+  { to: "/payment-solution", label: "Payment Solutions" },
   { to: "/business-energy", label: "Business Energy" },
   { to: "/merchant-cash-advance", label: "Merchant Cash Advance" },
   { to: "/digital-marketing", label: "Digital Marketing" },

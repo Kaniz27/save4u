@@ -8,14 +8,18 @@ interface CtaBannerProps {
   image?: string;
   ctaLabel?: string;
   ctaTo?: string;
+  secondaryLabel?: string;
+  secondaryTo?: string;
 }
 
 export function CtaBanner({
   title = "Ready to grow your business?",
-  subtitle = "Talk to Save4u today and find out how much you could save across payments, energy, funding and marketing.",
+  subtitle = "Talk to Save4u today and find out how much you could save across payments, funding, marketing and AI.",
   image,
-  ctaLabel = "Contact Us",
+  ctaLabel = "Get a Free Quote",
   ctaTo = "/contact-us",
+  secondaryLabel,
+  secondaryTo = "/contact-us",
 }: CtaBannerProps) {
   const ref = useScrollReveal<HTMLDivElement>();
 
@@ -32,10 +36,13 @@ export function CtaBanner({
       <div className="container-page relative">
         <h2 className="h2-section text-white">{title}</h2>
         <p className="mx-auto mt-4 max-w-xl text-white/90">{subtitle}</p>
-        <div className="mt-8">
-          <Button to={ctaTo} variant="secondary">
-            {ctaLabel}
-          </Button>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <Button to={ctaTo}>{ctaLabel}</Button>
+          {secondaryLabel && (
+            <Button to={secondaryTo} variant="ghost">
+              {secondaryLabel}
+            </Button>
+          )}
         </div>
       </div>
     </section>

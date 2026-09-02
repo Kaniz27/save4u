@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram, Twitter, ArrowRight } from "lucide-react";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
+import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
 
 const QUICK_LINKS = [
@@ -12,7 +13,7 @@ const QUICK_LINKS = [
 ];
 
 const SERVICE_LINKS = [
-  { to: "/payment-solution", label: "Payment Solution" },
+  { to: "/payment-solution", label: "Payment Solutions" },
   { to: "/business-energy", label: "Business Energy" },
   { to: "/merchant-cash-advance", label: "Merchant Cash Advance" },
   { to: "/digital-marketing", label: "Digital Marketing" },
@@ -104,6 +105,15 @@ export function Footer() {
               </a>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-slate-800 bg-white/[0.03]">
+        <div className="container-page flex flex-col items-center justify-between gap-4 py-8 sm:flex-row">
+          <p className="font-heading text-lg font-bold text-white">Ready to grow?</p>
+          <Button to="/contact-us">
+            Get a Free Quote <ArrowRight size={16} />
+          </Button>
         </div>
       </div>
 

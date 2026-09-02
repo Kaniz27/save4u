@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu } from "lucide-react";
-import { classNames } from "@/lib/utils";
+import { Link } from "react-router-dom";
+import { Menu, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 import { ServicesDropdown } from "./ServicesDropdown";
 import { MobileMenu } from "./MobileMenu";
 import { Button } from "@/components/ui/Button";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
+import { classNames } from "@/lib/utils";
 
 const LINKS = [
   { to: "/", label: "Home" },
@@ -14,71 +15,61 @@ const LINKS = [
 ];
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { pathname } = useLocation();
-  const isHome = pathname === "/";
-  const transparent = isHome && !scrolled;
+  const [scrolled, setScrolled] = useState(false);
+  const settings = useSiteSettings();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       <header
         className={classNames(
-          "fixed inset-x-0 top-11 z-40 transition-all duration-300",
-          transparent
-            ? "bg-transparent"
-            : "border-b border-slate-100 bg-white/70 shadow-sm backdrop-blur-lg",
+          "fixed inset-x-0 top-11 z-40 border-b border-slate-100 backdrop-blur-lg transition-shadow duration-300",
+          scrolled ? "bg-white/95 shadow-lg" : "bg-white/70 shadow-sm",
         )}
       >
         <nav className="container-page flex h-20 items-center justify-between">
-          <Logo light={transparent} />
+          <Logo compact={scrolled} />
 
           <div className="hidden items-center gap-8 md:flex">
             {LINKS.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={classNames(
-                  "text-sm font-semibold transition-colors",
-                  transparent
-                    ? "text-white hover:text-brand-blue"
-                    : "text-slate-700 hover:text-brand-blue-dark",
-                )}
+                className="text-sm font-semibold text-slate-700 transition-colors hover:text-brand-blue-dark"
               >
                 {link.label}
               </Link>
             ))}
-            <ServicesDropdown dark={transparent} />
+            <ServicesDropdown />
             <Link
               to="/contact-us"
-              className={classNames(
-                "text-sm font-semibold transition-colors",
-                transparent
-                  ? "text-white hover:text-brand-blue"
-                  : "text-slate-700 hover:text-brand-blue-dark",
-              )}
+              className="text-sm font-semibold text-slate-700 transition-colors hover:text-brand-blue-dark"
             >
               Contact Us
             </Link>
           </div>
 
-          <div className="hidden md:block">
-            <Button to="/contact-us">Get a Quote</Button>
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`}
+              className="inline-flex items-center gap-2 rounded-full border border-brand-blue/40 px-5 py-3 text-sm font-semibold text-brand-blue-dark transition-colors hover:bg-brand-blue/10"
+            >
+              <Phone size={16} />
+              Call Us
+            </a>
+            <Button to="/contact-us">Get a Free Quote</Button>
           </div>
 
           <button
             aria-label="Open menu"
-            className={classNames(
-              "rounded-full border p-2 md:hidden",
-              transparent ? "border-white/40 text-white" : "border-slate-200 text-slate-700",
-            )}
+            className="rounded-full border border-slate-200 p-2 text-slate-700 md:hidden"
             onClick={() => setMobileOpen(true)}
           >
             <Menu size={20} />

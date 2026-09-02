@@ -37,3 +37,11 @@ export function formatDateTime(iso: string): string {
 export function classNames(...values: (string | false | null | undefined)[]): string {
   return values.filter(Boolean).join(" ");
 }
+
+export function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}

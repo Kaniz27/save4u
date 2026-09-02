@@ -6,11 +6,15 @@ export default {
     extend: {
       colors: {
         brand: {
-          blue: "#4FB1E5",
-          "blue-dark": "#2E8FC2",
-          orange: "#FE6B04",
-          "orange-dark": "#E05A00",
-          navy: "#0B1A2A",
+          bg: "#E1E8F0",
+          blue: "#4DA3FF",
+          "blue-light": "#67B7FF",
+          "blue-dark": "#2E7FD9",
+          orange: "#FF7A1A",
+          "orange-dark": "#E0650A",
+          navy: "#102A43",
+          text: "#486581",
+          border: "#D3DEE9",
         },
       },
       fontFamily: {
@@ -18,11 +22,12 @@ export default {
         body: ["Inter", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 24px rgba(254, 107, 4, 0.35)",
+        glow: "0 0 24px rgba(255, 122, 26, 0.35)",
+        "glow-blue": "0 0 32px rgba(77, 163, 255, 0.35)",
       },
       backgroundImage: {
-        "brand-gradient": "linear-gradient(135deg, #4FB1E5 0%, #2E8FC2 100%)",
-        "cta-gradient": "linear-gradient(135deg, #4FB1E5 0%, #FE6B04 100%)",
+        "brand-gradient": "linear-gradient(135deg, #4DA3FF 0%, #2E7FD9 100%)",
+        "cta-gradient": "linear-gradient(135deg, #4DA3FF 0%, #67B7FF 100%)",
       },
     },
   },

@@ -1,64 +1,37 @@
-import { HeroCarousel } from "@/components/home/HeroCarousel";
-import { TrustBar } from "@/components/home/TrustBar";
-import { AboutIntro } from "@/components/home/AboutIntro";
-import { ServicesGrid } from "@/components/home/ServicesGrid";
-import { TrustBadges } from "@/components/home/TrustBadges";
-import { HighlightList } from "@/components/services/HighlightList";
-import { WhyChooseUsHighlights } from "@/components/home/WhyChooseUsHighlights";
-import { ReviewsCarousel } from "@/components/home/ReviewsCarousel";
+import { HomeHero } from "@/components/home/HomeHero";
+import { HomeServicesGrid } from "@/components/home/HomeServicesGrid";
+import { WhyUsAccordion } from "@/components/home/WhyUsAccordion";
+import { HomeFaqSection } from "@/components/home/HomeFaqSection";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import type { ServiceHighlight } from "@/types";
+import type { ServiceFaq } from "@/types";
 
-const HOME_HIGHLIGHTS: ServiceHighlight[] = [
-  {
-    icon: "Settings",
-    title: "One partner, every essential",
-    description:
-      "Payments, energy, funding and marketing usually mean four different suppliers, four different points of contact, and four different bills to chase. Save4u brings them under one roof, with one team who already knows your business.",
-  },
-  {
-    icon: "Wallet",
-    title: "Savings you can actually measure",
-    description:
-      "Every recommendation we make is backed by a whole-of-market comparison, not a single preferred supplier. If switching won't genuinely save you money or time, we'll tell you — and we often do.",
-  },
-  {
-    icon: "Headphones",
-    title: "Real people, not a ticket queue",
-    description:
-      "No call centres. Every client gets a named specialist who understands their account, so when you call, you're speaking to someone who already knows the answer.",
-  },
-];
-
-const HOME_HIGHLIGHT_IMAGES = [
-  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80",
+const HOME_FAQS: ServiceFaq[] = [
+  { question: "How quickly can I get set up?", answer: "Most businesses are fully set up and taking payments within 3 working days of approval, with our team guiding you through every step." },
+  { question: "How fast will I receive my funds?", answer: "Card transactions are settled to your account the next working day, so you're never left waiting on your own money." },
+  { question: "Are there any long-term contracts?", answer: "No long tie-ins — we offer flexible terms, including rolling monthly contracts on most plans, so you're never locked into a deal that no longer suits your business." },
+  { question: "Can I get funding alongside my card machine?", answer: "Yes. Through our merchant cash advance service, eligible businesses can access flexible funding with a fast decision and repayments that flex with your card sales." },
+  { question: "Do you offer support after setup?", answer: "Our UK-based support team is available Monday to Friday to help with anything from technical issues to general account questions." },
 ];
 
 export default function Home() {
   usePageMeta(
-    "Save4u | Payment, Energy, Funding & Marketing for UK Businesses",
+    "Payment, Funding & Marketing for UK Businesses",
     "Save4u helps UK businesses save money and grow with payment solutions, business energy switching, merchant cash advance, and digital marketing.",
   );
 
   return (
     <>
-      <HeroCarousel />
-      <TrustBar />
-      <AboutIntro />
-      <ServicesGrid />
-      <TrustBadges />
-      <HighlightList
-        title="Built around your business, not ours"
-        subtitle="A closer look at what makes working with Save4u different."
-        highlights={HOME_HIGHLIGHTS}
-        images={HOME_HIGHLIGHT_IMAGES}
+      <HomeHero />
+      <HomeServicesGrid />
+      <WhyUsAccordion />
+      <HomeFaqSection faqs={HOME_FAQS} />
+      <CtaBanner
+        title="Ready to Grow Your Business?"
+        subtitle="Get a free, no-obligation quote from our team today."
+        ctaLabel="Get a Free Quote"
+        image="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=80"
       />
-      <WhyChooseUsHighlights />
-      <ReviewsCarousel />
-      <CtaBanner image="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=80" />
     </>
   );
 }

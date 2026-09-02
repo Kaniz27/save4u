@@ -7,7 +7,7 @@ export function HowItWorks({ steps }: { steps: ServiceStep[] }) {
   if (steps.length === 0) return null;
 
   return (
-    <section className="bg-slate-50 py-20">
+    <section id="how-it-works" className="scroll-mt-32 bg-brand-bg py-20">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">How It Works</span>

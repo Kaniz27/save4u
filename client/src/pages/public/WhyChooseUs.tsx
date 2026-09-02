@@ -3,9 +3,21 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
+import { FaqAccordion } from "@/components/services/FaqAccordion";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
+import { PageHero } from "@/components/layout/PageHero";
 import { classNames } from "@/lib/utils";
+import type { ServiceFaq } from "@/types";
+
+const WHY_BULLETS = ["Whole-of-market comparisons, not one preferred supplier", "A named specialist, not a call centre", "Fair, transparent pricing"];
+
+const WHY_FAQS: ServiceFaq[] = [
+  { question: "Will switching disrupt my business?", answer: "No — we handle the transition end-to-end and time any changeover to suit you, so there's no disruption to trading." },
+  { question: "Am I tied into a long contract?", answer: "We only recommend terms that are fair and transparent — no hidden lock-ins or auto-renewal traps." },
+  { question: "What if I'm already under contract with another supplier?", answer: "We can review your current terms and let you know the best time to switch without incurring exit fees." },
+  { question: "Do you only work with large businesses?", answer: "Not at all — we work with businesses of every size, from sole traders to multi-site operations." },
+];
 
 const REASON_COLORS = [
   { bg: "bg-brand-blue/10", text: "text-brand-blue-dark" },
@@ -30,20 +42,20 @@ export default function WhyChooseUs() {
   return (
     <>
       <Breadcrumb current="Why Choose Us" />
-      <section className="relative flex min-h-[50vh] items-center overflow-hidden bg-brand-gradient py-16 text-center text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-25"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80)",
-          }}
-          aria-hidden
-        />
-        <div className="container-page relative">
-          <span className="text-sm font-bold uppercase tracking-wide text-white/80">Why Choose Us</span>
-          <h1 className="mt-3 h1-hero">The partner UK businesses trust to save and grow</h1>
-        </div>
-      </section>
+      <PageHero
+        heading={
+          <>
+            The Partner UK Businesses
+            <br />
+            Trust to Save and Grow
+          </>
+        }
+        bullets={WHY_BULLETS}
+        image="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+        imageAlt="Save4u client reviewing their savings with a specialist"
+        ctaLabel="Talk to a Specialist"
+        ctaTo="/contact-us"
+      />
 
       <section className="container-page py-20">
         <div ref={introRef} className="grid items-center gap-12 md:grid-cols-2">
@@ -77,7 +89,7 @@ export default function WhyChooseUs() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-20">
+      <section className="bg-brand-bg py-20">
         <div className="container-page">
           <div ref={ref} className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {REASONS.map(({ icon: Icon, title, text }, i) => {
@@ -103,6 +115,8 @@ export default function WhyChooseUs() {
       </section>
 
       <ServicesGrid />
+
+      <FaqAccordion faqs={WHY_FAQS} />
 
       <CtaBanner image="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80" />
     </>

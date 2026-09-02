@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { FeatureGrid } from "@/components/services/FeatureGrid";
 import { SubServiceGrid } from "@/components/services/SubServiceGrid";
+import { ConversionFunnel } from "@/components/services/ConversionFunnel";
 import { HowItWorks } from "@/components/services/HowItWorks";
 import { HighlightList } from "@/components/services/HighlightList";
 import { FaqAccordion } from "@/components/services/FaqAccordion";
@@ -37,7 +38,7 @@ function NotFoundState() {
 // image/text HighlightList rows — flagged as placeholders in the README.
 const HIGHLIGHT_IMAGES: Record<string, string[]> = {
   "payment-solution": [
-    "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1000&q=80",
+    "https://www.takepayments.com/media/11phqqjy/card_machines_a920_pro_graphic-402x.png",
     "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1000&q=80",
     "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=80",
   ],
@@ -58,13 +59,19 @@ const HIGHLIGHT_IMAGES: Record<string, string[]> = {
   ],
 };
 
+const SEO_TITLES: Record<string, string> = {
+  "payment-solution": "Card Payment Solutions for UK Businesses",
+  "merchant-cash-advance": "Flexible Merchant Cash Advance for UK Businesses",
+  "digital-marketing": "Digital Marketing Services for UK Businesses",
+};
+
 export default function ServicePage() {
   const { pathname } = useLocation();
   const slug = pathname.replace(/^\//, "");
   const { service, loading, error } = useService(slug);
   const { services } = useServices();
 
-  usePageMeta(service?.name ?? "Service", service?.description);
+  usePageMeta(SEO_TITLES[slug] ?? service?.name ?? "Service", service?.description);
 
   if (loading) return <LoadingState />;
   if (error || !service) return <NotFoundState />;
@@ -80,6 +87,7 @@ export default function ServicePage() {
 
       <FeatureGrid features={service.features} />
       <SubServiceGrid subServices={service.subServices} />
+      {service.layoutVariant === "marketing" && <ConversionFunnel />}
       <HowItWorks steps={service.howItWorks} />
 
       <HighlightList
@@ -88,7 +96,7 @@ export default function ServicePage() {
         images={HIGHLIGHT_IMAGES[service.slug] ?? HIGHLIGHT_IMAGES["payment-solution"]}
       />
 
-      <section className="container-page py-16">
+      <section id="enquiry" className="container-page py-16">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Get Started</span>

@@ -9,7 +9,8 @@ export const FALLBACK_SERVICES: Service[] = [
     name: "Payment Solution",
     tagline: "Smarter Payment Solutions for growing businesses",
     icon: "CreditCard",
-    heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80",
+    heroImage:
+      "https://www.takepayments.com/media/ubdai32q/homepage_refresh_desktop_banner_-gp_blue-2x.jpg?mode=crop&width=1500&height=475&format=webp&quality=90",
     description:
       "Save4u helps UK businesses accept payments faster and cheaper, with transparent card processing rates, next-day settlement, and hardware that fits your business — from countertop terminals to fully integrated ecommerce checkouts.",
     features: [
@@ -75,7 +76,7 @@ export const FALLBACK_SERVICES: Service[] = [
       },
     ],
     ctaImage: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1600&q=80",
-    layoutVariant: "default",
+    layoutVariant: "payment",
   },
   {
     _id: "fallback-business-energy",
@@ -220,7 +221,7 @@ export const FALLBACK_SERVICES: Service[] = [
       },
     ],
     ctaImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80",
-    layoutVariant: "default",
+    layoutVariant: "funding",
   },
   {
     _id: "fallback-digital-marketing",
@@ -267,11 +268,35 @@ export const FALLBACK_SERVICES: Service[] = [
       },
       {
         icon: "Target",
-        title: "Paid & Social Advertising",
+        title: "Google Ads",
         image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=900&q=80",
-        description: "Targeted Google and social ad campaigns, managed for measurable return on spend.",
+        description: "Targeted Google ad campaigns, managed for measurable return on spend.",
         detail:
           "Campaigns are built around a clear goal — leads, bookings, or sales — with budget shifted toward whatever's actually converting, reported back to you in plain terms.",
+      },
+      {
+        icon: "Share2",
+        title: "Social Media Marketing",
+        image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=900&q=80",
+        description: "Content and community management across the platforms your customers actually use.",
+        detail:
+          "From content calendars to paid social campaigns, we build a presence that builds trust — and turns followers into enquiries.",
+      },
+      {
+        icon: "Users",
+        title: "Lead Generation",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+        description: "Campaigns built to fill your pipeline with people ready to buy, not just visitors.",
+        detail:
+          "We target by location, interest and behaviour, so your budget reaches the people most likely to enquire — with every lead tracked back to the campaign that won it.",
+      },
+      {
+        icon: "TrendingUp",
+        title: "Conversion Optimisation",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        description: "Turn more of your existing traffic into enquiries, without spending more on ads.",
+        detail:
+          "We test and refine your pages, forms and calls to action so the traffic you're already paying for converts at a higher rate.",
       },
     ],
     highlights: [
@@ -292,8 +317,9 @@ export const FALLBACK_SERVICES: Service[] = [
       },
     ],
     ctaImage: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1600&q=80",
-    layoutVariant: "default",
+    layoutVariant: "marketing",
   },
+
 ];
 
 export function findFallbackService(slug: string): Service | undefined {

@@ -36,6 +36,11 @@ import {
   ShoppingCart,
   Layout,
   Flame,
+  Bot,
+  Cpu,
+  Sparkles,
+  Workflow,
+  Link2,
   type LucideIcon,
   type LucideProps,
 } from "lucide-react";
@@ -81,6 +86,11 @@ const ICONS: Record<string, LucideIcon> = {
   ShoppingCart,
   Layout,
   Flame,
+  Bot,
+  Cpu,
+  Sparkles,
+  Workflow,
+  Link2,
 };
 
 export function DynamicIcon({ name, ...props }: { name: string } & LucideProps) {
