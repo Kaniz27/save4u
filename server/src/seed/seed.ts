@@ -15,14 +15,14 @@ const services = [
     tagline: "Smarter Payment Solutions for growing businesses",
     icon: "CreditCard",
     heroImage:
-      "https://www.takepayments.com/media/ubdai32q/homepage_refresh_desktop_banner_-gp_blue-2x.jpg?mode=crop&width=1500&height=475&format=webp&quality=90",
+      "https://images.unsplash.com/photo-1742836531256-87aa58fd35a9?auto=format&fit=crop&w=1600&q=80",
     description:
       "Save4u helps UK businesses accept payments faster and cheaper, with transparent card processing rates, next-day settlement, and hardware that fits your business — from countertop terminals to fully integrated ecommerce checkouts.",
     features: [
-      { icon: "Percent", title: "Lower Transaction Rates", description: "Competitive, transparent rates with no hidden fees or long lock-in contracts." },
-      { icon: "Zap", title: "Fast Settlement", description: "Get paid into your account next working day, keeping cash flow moving." },
-      { icon: "ShieldCheck", title: "PCI-DSS Compliant", description: "Every transaction is processed on secure, fully compliant infrastructure." },
-      { icon: "Smartphone", title: "Card Machines & Online", description: "Countertop, portable, and online payment gateways in one account." },
+      { icon: "Percent", image: "https://images.unsplash.com/photo-1768207450151-30c0bf8e8091?auto=format&fit=crop&w=200&h=200&q=80", title: "Lower Transaction Rates", description: "Competitive, transparent rates with no hidden fees or long lock-in contracts." },
+      { icon: "Zap", image: "https://images.unsplash.com/photo-1580674287165-60059e9ac2aa?auto=format&fit=crop&w=200&h=200&q=80", title: "Fast Settlement", description: "Get paid into your account next working day, keeping cash flow moving." },
+      { icon: "ShieldCheck", image: "https://images.unsplash.com/photo-1763568258239-d3b5c95019af?auto=format&fit=crop&w=200&h=200&q=80", title: "PCI-DSS Compliant", description: "Every transaction is processed on secure, fully compliant infrastructure." },
+      { icon: "Smartphone", image: "https://images.unsplash.com/photo-1743004128683-67187a85c537?auto=format&fit=crop&w=200&h=200&q=80", title: "Card Machines & Online", description: "Countertop, portable, and online payment gateways in one account." },
     ],
     howItWorks: [
       { step: 1, title: "Free Consultation", description: "We review your current processing costs and business needs." },
@@ -39,7 +39,7 @@ const services = [
       {
         icon: "CreditCard",
         title: "Card Machines",
-        image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=900&q=80",
+        image: "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=900&q=80",
         description: "Fast, secure card machines for every business type — retail, hospitality, or on the move.",
         detail:
           "Choose from countertop, portable, or fully mobile card readers, set up to take chip-and-pin, contactless, and mobile wallet payments within days, with the same next-day settlement across every device.",
@@ -47,7 +47,7 @@ const services = [
       {
         icon: "Globe",
         title: "Online Payments",
-        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=80",
+        image: "https://images.unsplash.com/photo-1758686254082-0f91a27b3075?auto=format&fit=crop&w=900&q=80",
         description: "Accept secure online payments on your website or online store, any time of day.",
         detail:
           "A hosted payment gateway or embeddable checkout built to work with the ecommerce platforms you already use, so online and in-person sales settle into the same account.",
@@ -55,7 +55,7 @@ const services = [
       {
         icon: "Monitor",
         title: "ePOS System",
-        image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=900&q=80",
+        image: "https://images.unsplash.com/photo-1742836531271-98fd8151d257?auto=format&fit=crop&w=900&q=80",
         description: "Streamline operations with an ePOS system that integrates directly with your card machines.",
         detail:
           "Manage stock, staff, and sales from one screen, with every transaction flowing straight through to your card processing — no manual reconciliation at the end of the day.",
@@ -81,7 +81,7 @@ const services = [
           "One clear rate, agreed upfront, with no long tie-in contracts or hidden charges buried in the small print.",
       },
     ],
-    ctaImage: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1600&q=80",
+    ctaImage: "https://images.unsplash.com/photo-1742836531239-1fe146bf7e3f?auto=format&fit=crop&w=1600&q=80",
     layoutVariant: "payment",
   },
   {
@@ -93,10 +93,10 @@ const services = [
     description:
       "We compare business gas and electricity rates across the UK's leading suppliers to find you a better deal, then manage renewals so you never get rolled onto an expensive default tariff again.",
     features: [
-      { icon: "TrendingDown", title: "Lower Bills", description: "We benchmark your rates against the whole of market to find real savings." },
-      { icon: "RefreshCw", title: "Renewal Management", description: "We track your contract end date and renegotiate before it expires." },
-      { icon: "FileText", title: "Bill Validation", description: "We check past bills for overcharges and help you claim refunds." },
-      { icon: "Leaf", title: "Green Tariff Options", description: "Access to renewable energy tariffs at competitive rates." },
+      { icon: "TrendingDown", image: "https://images.unsplash.com/photo-1728366403350-b893ccdc284d?auto=format&fit=crop&w=200&h=200&q=80", title: "Lower Bills", description: "We benchmark your rates against the whole of market to find real savings." },
+      { icon: "RefreshCw", image: "https://images.unsplash.com/photo-1763729805496-b5dbf7f00c79?auto=format&fit=crop&w=200&h=200&q=80", title: "Renewal Management", description: "We track your contract end date and renegotiate before it expires." },
+      { icon: "FileText", image: "https://images.unsplash.com/photo-1697301439916-169bd6844842?auto=format&fit=crop&w=200&h=200&q=80", title: "Bill Validation", description: "We check past bills for overcharges and help you claim refunds." },
+      { icon: "Leaf", image: "https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&w=200&h=200&q=80", title: "Green Tariff Options", description: "Access to renewable energy tariffs at competitive rates." },
     ],
     howItWorks: [
       { step: 1, title: "Send Your Bill", description: "Upload a recent bill or meter details for a like-for-like comparison." },
@@ -166,10 +166,10 @@ const services = [
     description:
       "Access working capital against your future card sales — no fixed monthly repayments, no property security, and funds in your account in as little as 48 hours.",
     features: [
-      { icon: "Clock", title: "Fast Approval", description: "Decisions in 24-48 hours, with funds released shortly after." },
-      { icon: "Percent", title: "Repay As You Earn", description: "Repayments flex with your card takings — no fixed monthly amount." },
-      { icon: "Home", title: "No Security Required", description: "Unsecured funding with no property or personal guarantee needed." },
-      { icon: "TrendingUp", title: "Funding That Scales", description: "Access further advances as your business grows." },
+      { icon: "Clock", image: "https://images.unsplash.com/photo-1704265586142-db3e17d0dea0?auto=format&fit=crop&w=200&h=200&q=80", title: "Fast Approval", description: "Decisions in 24-48 hours, with funds released shortly after." },
+      { icon: "Percent", image: "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&w=200&h=200&q=80", title: "Repay As You Earn", description: "Repayments flex with your card takings — no fixed monthly amount." },
+      { icon: "Home", image: "https://images.unsplash.com/photo-1752159400890-d906038f1b35?auto=format&fit=crop&w=200&h=200&q=80", title: "No Security Required", description: "Unsecured funding with no property or personal guarantee needed." },
+      { icon: "TrendingUp", image: "https://images.unsplash.com/photo-1772413438614-3d4582783392?auto=format&fit=crop&w=200&h=200&q=80", title: "Funding That Scales", description: "Access further advances as your business grows." },
     ],
     howItWorks: [
       { step: 1, title: "Quick Application", description: "Tell us about your business and recent card turnover." },
@@ -240,10 +240,10 @@ const services = [
     description:
       "From search visibility to paid campaigns and social media, our digital marketing team builds and runs growth strategies tailored to your business goals and budget.",
     features: [
-      { icon: "Search", title: "SEO", description: "Rank higher on Google with technical, content, and local SEO." },
-      { icon: "Target", title: "Paid Advertising", description: "Google & social ad campaigns managed for measurable ROI." },
-      { icon: "Share2", title: "Social Media", description: "Content and community management that builds your brand." },
-      { icon: "BarChart3", title: "Reporting", description: "Clear, regular reporting so you always know what's working." },
+      { icon: "Search", image: "https://images.unsplash.com/photo-1637606346315-d23ed32a6cfc?auto=format&fit=crop&w=200&h=200&q=80", title: "SEO", description: "Rank higher on Google with technical, content, and local SEO." },
+      { icon: "Target", image: "https://images.unsplash.com/photo-1756363212224-dca8af2eac90?auto=format&fit=crop&w=200&h=200&q=80", title: "Paid Advertising", description: "Google & social ad campaigns managed for measurable ROI." },
+      { icon: "Share2", image: "https://images.unsplash.com/photo-1690883794145-e96486fbe66b?auto=format&fit=crop&w=200&h=200&q=80", title: "Social Media", description: "Content and community management that builds your brand." },
+      { icon: "BarChart3", image: "https://images.unsplash.com/photo-1772413438614-3d4582783392?auto=format&fit=crop&w=200&h=200&q=80", title: "Reporting", description: "Clear, regular reporting so you always know what's working." },
     ],
     howItWorks: [
       { step: 1, title: "Discovery", description: "We learn your business, audience, and growth goals." },

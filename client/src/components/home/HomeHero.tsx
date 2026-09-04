@@ -68,8 +68,8 @@ export function HomeHero() {
           <div className="relative overflow-hidden rounded-[2rem] border border-white bg-white p-6 shadow-xl">
             <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-brand-gradient opacity-20 blur-2xl" />
             <img
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
-              alt="Card payment terminal and smartphone showing a business dashboard"
+              src="https://images.unsplash.com/photo-1742836531239-1fe146bf7e3f?auto=format&fit=crop&w=900&q=80"
+              alt="Smartphone being used to make a contactless payment"
               className="mx-auto h-auto w-full rounded-2xl object-cover"
               loading="eager"
             />

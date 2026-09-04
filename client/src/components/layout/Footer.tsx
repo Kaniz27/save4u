@@ -3,12 +3,22 @@ import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram, Twitter, ArrowRight
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
+import { icon8Url } from "@/lib/icons8";
 import icoBadge from "@/assets/badge-ico.jpeg";
 import energyOmbudsmanBadge from "@/assets/badge-energy-ombudsman.jpeg";
 
 const COMPLIANCE_BADGES = [
   { src: icoBadge, alt: "ICO — Information Commissioner's Office registered", href: "https://ico.org.uk" },
   { src: energyOmbudsmanBadge, alt: "Energy Ombudsman — ADR scheme member", href: "https://www.energyombudsman.org" },
+];
+
+const PAYMENT_METHODS = [
+  { slug: "visa", alt: "Visa" },
+  { slug: "mastercard", alt: "Mastercard" },
+  { slug: "maestro", alt: "Maestro" },
+  { slug: "amex", alt: "American Express" },
+  { slug: "apple-pay", alt: "Apple Pay" },
+  { slug: "google-pay", alt: "Google Pay" },
 ];
 
 const LEGAL_NOTICE =
@@ -59,6 +69,23 @@ export function Footer() {
               >
                 <Icon size={16} />
               </a>
+            ))}
+          </div>
+
+          <p className="mt-6 text-xs font-bold uppercase tracking-wide text-slate-400">We Accept</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {PAYMENT_METHODS.map((method) => (
+              <span
+                key={method.slug}
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-white p-1.5 shadow-sm"
+              >
+                <img
+                  src={icon8Url(method.slug, 48, "color")}
+                  alt={method.alt}
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
+              </span>
             ))}
           </div>
         </div>

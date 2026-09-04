@@ -5,10 +5,8 @@ import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { FaqAccordion } from "@/components/services/FaqAccordion";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
-import { Icon8 } from "@/components/ui/Icon8";
 import { PageHero } from "@/components/layout/PageHero";
 import { SplitText } from "@/components/ui/SplitText";
-import { classNames } from "@/lib/utils";
 import type { ServiceFaq } from "@/types";
 
 const WHY_BULLETS = ["Whole-of-market comparisons, not one preferred supplier", "A named specialist, not a call centre", "Fair, transparent pricing"];
@@ -20,19 +18,37 @@ const WHY_FAQS: ServiceFaq[] = [
   { question: "Do you only work with large businesses?", answer: "Not at all — we work with businesses of every size, from sole traders to multi-site operations." },
 ];
 
-const REASON_COLORS = [
-  { bg: "bg-brand-blue/10", text: "text-brand-blue-dark" },
-  { bg: "bg-brand-blue-dark/10", text: "text-brand-blue-dark" },
-  { bg: "bg-slate-100", text: "text-brand-navy" },
-];
-
 const REASONS = [
-  { icon: "security-checked", title: "Trusted Experts", text: "Years of combined experience across payments, energy, funding and marketing, all under one roof." },
-  { icon: "clock", title: "Fast Turnaround", text: "From first enquiry to a live quote in days — we know time matters when you're running a business." },
-  { icon: "coins", title: "Real, Measurable Savings", text: "Every recommendation is backed by a whole-of-market comparison, not a single preferred supplier." },
-  { icon: "conference-call", title: "One Dedicated Contact", text: "No call centres or ticket queues — a named specialist manages your account from day one." },
-  { icon: "headphones", title: "UK-Based Support", text: "Our support team is based in the UK and available when you actually need to speak to someone." },
-  { icon: "prize", title: "No Hidden Fees", text: "Transparent pricing on everything we recommend, with nothing buried in the small print." },
+  {
+    image: "https://images.unsplash.com/photo-1635602739175-bab409a6e94c?auto=format&fit=crop&w=400&h=300&q=80",
+    title: "Trusted Experts",
+    text: "Years of combined experience across payments, energy, funding and marketing, all under one roof.",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1704265586142-db3e17d0dea0?auto=format&fit=crop&w=400&h=300&q=80",
+    title: "Fast Turnaround",
+    text: "From first enquiry to a live quote in days — we know time matters when you're running a business.",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1768207450151-30c0bf8e8091?auto=format&fit=crop&w=400&h=300&q=80",
+    title: "Real, Measurable Savings",
+    text: "Every recommendation is backed by a whole-of-market comparison, not a single preferred supplier.",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=400&h=300&q=80",
+    title: "One Dedicated Contact",
+    text: "No call centres or ticket queues — a named specialist manages your account from day one.",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1702669010428-0063fa6eb5ed?auto=format&fit=crop&w=400&h=300&q=80",
+    title: "UK-Based Support",
+    text: "Our support team is based in the UK and available when you actually need to speak to someone.",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1697301439916-169bd6844842?auto=format&fit=crop&w=400&h=300&q=80",
+    title: "No Hidden Fees",
+    text: "Transparent pricing on everything we recommend, with nothing buried in the small print.",
+  },
 ];
 
 export default function WhyChooseUs() {
@@ -87,28 +103,29 @@ export default function WhyChooseUs() {
       <section className="bg-brand-bg py-20">
         <div className="container-page">
           <div ref={ref} className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {REASONS.map(({ icon, title, text }, i) => {
-              const color = REASON_COLORS[i % REASON_COLORS.length];
-              return (
+            {REASONS.map(({ image, title, text }) => (
               <div
                 key={title}
-                className="reason-card glass-card group cursor-default p-8 hover:bg-white hover:shadow-glow-blue active:scale-95"
+                className="reason-card group cursor-default rounded-2xl border border-brand-orange/30 bg-white transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:border-brand-orange hover:shadow-glow active:scale-95"
               >
-                <span
-                  className={classNames(
-                    "flex h-20 w-20 items-center justify-center rounded-2xl transition-all duration-300 group-hover:-rotate-6 group-hover:scale-110",
-                    color.bg,
-                  )}
-                >
-                  <Icon8 slug={icon} alt={title} size={64} className="h-11 w-11" />
+                <span className="block w-full p-4 pb-0">
+                  <span className="block h-36 w-full overflow-hidden rounded-xl">
+                    <img
+                      src={image}
+                      alt={title}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  </span>
                 </span>
-                <h3 className="mt-5 font-heading text-lg font-bold text-slate-900 transition-colors duration-300 group-hover:text-brand-blue-dark">
-                  {title}
-                </h3>
-                <p className="mt-3 text-sm text-slate-600">{text}</p>
+                <div className="p-6">
+                  <h3 className="font-heading text-lg font-bold text-slate-900 transition-colors duration-300 group-hover:text-brand-blue-dark">
+                    {title}
+                  </h3>
+                  <p className="mt-3 text-sm text-slate-600">{text}</p>
+                </div>
               </div>
-              );
-            })}
+            ))}
           </div>
         </div>
       </section>

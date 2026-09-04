@@ -11,7 +11,7 @@ const SERVICES = [
     title: "Payment Solutions",
     description: "Accept payments in-store, online or on the go with secure, flexible payment solutions built around your business.",
     cta: "Explore Payment Solutions",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1758686254082-0f91a27b3075?auto=format&fit=crop&w=800&q=80",
   },
   {
     to: "/merchant-cash-advance",

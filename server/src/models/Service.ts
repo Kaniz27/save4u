@@ -10,6 +10,7 @@ export const SERVICE_SLUGS = [
 const featureSchema = new Schema(
   {
     icon: { type: String, required: true },
+    image: { type: String, default: "" },
     title: { type: String, required: true },
     description: { type: String, required: true },
   },

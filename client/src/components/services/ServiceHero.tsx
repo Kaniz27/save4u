@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { ArrowRight, Check, Search, Users, TrendingUp, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/Button";
-import { Icon8 } from "@/components/ui/Icon8";
 import { SplitText } from "@/components/ui/SplitText";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import type { Service } from "@/types";
@@ -26,14 +25,14 @@ const BADGES: Record<string, string> = {
 };
 
 const PAYMENT_FEATURES = [
-  { icon: "bank-cards", label: "Card Machines" },
-  { icon: "globe-earth", label: "Online Payments" },
-  { icon: "monitor", label: "EPOS" },
-  { icon: "wifi", label: "Contactless" },
-  { icon: "smartphone", label: "Apple Pay" },
-  { icon: "wallet", label: "Google Pay" },
-  { icon: "security-checked", label: "Secure Checkout" },
-  { icon: "flash-on", label: "Next-Day Settlement" },
+  { image: "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=200&h=200&q=80", label: "Card Machines" },
+  { image: "https://images.unsplash.com/photo-1758686254082-0f91a27b3075?auto=format&fit=crop&w=200&h=200&q=80", label: "Online Payments" },
+  { image: "https://images.unsplash.com/photo-1742836531271-98fd8151d257?auto=format&fit=crop&w=200&h=200&q=80", label: "EPOS" },
+  { image: "https://images.unsplash.com/photo-1742836531239-1fe146bf7e3f?auto=format&fit=crop&w=200&h=200&q=80", label: "Contactless" },
+  { image: "https://images.unsplash.com/photo-1485206542366-16d53f333d1c?auto=format&fit=crop&w=200&h=200&q=80", label: "Apple Pay" },
+  { image: "https://images.unsplash.com/photo-1681825984459-47ee999da245?auto=format&fit=crop&w=200&h=200&q=80", label: "Google Pay" },
+  { image: "https://images.unsplash.com/photo-1635602739175-bab409a6e94c?auto=format&fit=crop&w=200&h=200&q=80", label: "Secure Checkout" },
+  { image: "https://images.unsplash.com/photo-1650821414390-276561abd95a?auto=format&fit=crop&w=200&h=200&q=80", label: "Next-Day Settlement" },
 ];
 
 const FUNDING_STEPS = [
@@ -100,8 +99,8 @@ function PaymentHero({ service }: { service: Service }) {
           <div className="relative overflow-hidden rounded-[2rem] border border-white bg-white p-8 shadow-xl">
             <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-brand-gradient opacity-20 blur-2xl" />
             <img
-              src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=900&q=80"
-              alt="Modern card payment terminal"
+              src="https://images.unsplash.com/photo-1726057403601-c099f03e7b3e?auto=format&fit=crop&w=900&q=80"
+              alt="Person holding a credit card ready to pay"
               className="mx-auto h-auto w-full rounded-2xl object-cover"
               loading="eager"
             />
@@ -111,13 +110,13 @@ function PaymentHero({ service }: { service: Service }) {
 
       <div className="container-page pb-16">
         <div ref={ref} className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
-          {PAYMENT_FEATURES.map(({ icon, label }) => (
+          {PAYMENT_FEATURES.map(({ image, label }) => (
             <div
               key={label}
               className="payment-feature group flex cursor-default flex-col items-center gap-2 rounded-2xl border border-brand-border bg-white/70 p-4 text-center transition-[transform,box-shadow,background-color,border-color] duration-300 hover:-translate-y-1.5 hover:border-brand-blue/40 hover:bg-brand-blue hover:shadow-glow-blue active:scale-95"
             >
-              <span className="flex h-16 w-16 items-center justify-center rounded-xl bg-brand-blue/10 transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
-                <Icon8 slug={icon} alt={label} size={64} className="h-10 w-10" />
+              <span className="block h-16 w-16 overflow-hidden rounded-xl transition-transform duration-300 group-hover:scale-110">
+                <img src={image} alt={label} className="h-full w-full object-cover" loading="lazy" />
               </span>
               <span className="text-xs font-semibold text-brand-navy transition-colors duration-300 group-hover:text-white">
                 {label}

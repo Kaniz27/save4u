@@ -8,7 +8,7 @@ const SERVICES = [
     to: "/payment-solution",
     title: "Payment Solutions",
     description: "Fast, secure card machines and EPOS systems for every business type — retail, hospitality, or mobile.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=400&q=80",
+    image: "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=400&q=80",
   },
   {
     to: "/merchant-cash-advance",
@@ -47,25 +47,34 @@ export function HomeServicesGrid() {
           </p>
         </div>
 
-        <div ref={ref} className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div ref={ref} className="mt-14 grid gap-8 sm:grid-cols-2">
           {SERVICES.map(({ to, title, description, image }) => (
             <div
               key={to}
-              className="home-service-card group flex flex-col items-center rounded-2xl border border-transparent bg-white p-8 text-center shadow-sm transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:border-brand-blue/30 hover:shadow-glow-blue active:scale-95"
+              className="home-service-card group flex flex-col items-center rounded-2xl border border-brand-orange/30 bg-white text-center transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:border-brand-orange hover:shadow-glow active:scale-95"
             >
-              <span className="mb-6 h-28 w-28 overflow-hidden rounded-full bg-brand-blue/10 transition-transform duration-300 group-hover:scale-105">
-                <img src={image} alt={title} className="h-full w-full object-cover" loading="lazy" />
+              <span className="block w-full p-4 pb-0">
+                <span className="block h-44 w-full overflow-hidden rounded-xl">
+                  <img
+                    src={image}
+                    alt={title}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </span>
               </span>
-              <h3 className="font-heading text-lg font-bold text-slate-900 transition-colors duration-300 group-hover:text-brand-blue-dark">
-                {title}
-              </h3>
-              <p className="mt-3 min-h-[60px] text-sm text-slate-600">{description}</p>
-              <Link
-                to={to}
-                className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-navy px-5 py-2.5 text-xs font-bold text-white transition-colors hover:bg-brand-blue-dark"
-              >
-                Find out more <ArrowRight size={14} />
-              </Link>
+              <div className="flex flex-1 flex-col items-center p-8">
+                <h3 className="font-heading text-xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-brand-blue-dark">
+                  {title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600">{description}</p>
+                <Link
+                  to={to}
+                  className="mt-7 inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-blue px-7 py-2.5 text-sm font-bold text-brand-blue-dark transition-colors duration-200 hover:bg-brand-blue hover:text-white"
+                >
+                  Find out more <ArrowRight size={14} />
+                </Link>
+              </div>
             </div>
           ))}
         </div>

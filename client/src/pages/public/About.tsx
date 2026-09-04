@@ -5,7 +5,6 @@ import { TrustBadges } from "@/components/home/TrustBadges";
 import { HowItWorks } from "@/components/services/HowItWorks";
 import { FaqAccordion } from "@/components/services/FaqAccordion";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import { Icon8 } from "@/components/ui/Icon8";
 import { PageHero } from "@/components/layout/PageHero";
 import { SplitText } from "@/components/ui/SplitText";
 import type { ServiceStep, ServiceFaq } from "@/types";
@@ -17,9 +16,21 @@ const ABOUT_BULLETS = [
 ];
 
 const VALUES = [
-  { icon: "target", title: "Our Mission", text: "To be the single, trusted place UK businesses turn to for the essentials that keep them running lean and profitable." },
-  { icon: "heart-with-pulse", title: "Our Approach", text: "Honest comparisons, clear pricing, and no pressure — we only recommend a switch when it genuinely benefits you." },
-  { icon: "rocket", title: "Our Promise", text: "Fast turnarounds and a dedicated point of contact from your first enquiry through to ongoing support." },
+  {
+    image: "https://images.unsplash.com/photo-1761002278039-ed31a08d3b81?auto=format&fit=crop&w=200&h=200&q=80",
+    title: "Our Mission",
+    text: "To be the single, trusted place UK businesses turn to for the essentials that keep them running lean and profitable.",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1726057403601-c099f03e7b3e?auto=format&fit=crop&w=200&h=200&q=80",
+    title: "Our Approach",
+    text: "Honest comparisons, clear pricing, and no pressure — we only recommend a switch when it genuinely benefits you.",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1635602739175-bab409a6e94c?auto=format&fit=crop&w=200&h=200&q=80",
+    title: "Our Promise",
+    text: "Fast turnarounds and a dedicated point of contact from your first enquiry through to ongoing support.",
+  },
 ];
 
 const HOW_WE_WORK: ServiceStep[] = [
@@ -81,13 +92,13 @@ export default function About() {
 
       <section className="container-page py-20">
         <div ref={ref} className="grid gap-8 md:grid-cols-3">
-          {VALUES.map(({ icon, title, text }) => (
+          {VALUES.map(({ image, title, text }) => (
             <div
               key={title}
               className="value-card glass-card group cursor-default p-8 text-center hover:shadow-glow-blue hover:bg-white active:scale-95"
             >
-              <span className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-brand-blue/10 transition-all duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:bg-brand-blue/20">
-                <Icon8 slug={icon} alt={title} size={64} className="h-11 w-11" />
+              <span className="mx-auto block h-20 w-20 overflow-hidden rounded-2xl transition-transform duration-300 group-hover:scale-110">
+                <img src={image} alt={title} className="h-full w-full object-cover" loading="lazy" />
               </span>
               <h3 className="mt-5 font-heading text-lg font-bold text-slate-900 transition-colors duration-300 group-hover:text-brand-blue-dark">
                 {title}

@@ -39,9 +39,9 @@ function NotFoundState() {
 // image/text HighlightList rows — flagged as placeholders in the README.
 const HIGHLIGHT_IMAGES: Record<string, string[]> = {
   "payment-solution": [
-    "https://www.takepayments.com/media/11phqqjy/card_machines_a920_pro_graphic-402x.png",
-    "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1742836531271-98fd8151d257?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1758686254082-0f91a27b3075?auto=format&fit=crop&w=1000&q=80",
   ],
   "business-energy": [
     "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=80",

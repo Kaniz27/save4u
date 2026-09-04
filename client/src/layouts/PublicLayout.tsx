@@ -2,6 +2,8 @@ import { Outlet } from "react-router-dom";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { CookieConsent } from "@/components/layout/CookieConsent";
 
 export function PublicLayout() {
   return (
@@ -12,6 +14,8 @@ export function PublicLayout() {
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppButton />
+      <CookieConsent />
     </div>
   );
 }
