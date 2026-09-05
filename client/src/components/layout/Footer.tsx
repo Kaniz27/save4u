@@ -3,26 +3,6 @@ import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram, Twitter, ArrowRight
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
-import { icon8Url } from "@/lib/icons8";
-import icoBadge from "@/assets/badge-ico.jpeg";
-import energyOmbudsmanBadge from "@/assets/badge-energy-ombudsman.jpeg";
-
-const COMPLIANCE_BADGES = [
-  { src: icoBadge, alt: "ICO — Information Commissioner's Office registered", href: "https://ico.org.uk" },
-  { src: energyOmbudsmanBadge, alt: "Energy Ombudsman — ADR scheme member", href: "https://www.energyombudsman.org" },
-];
-
-const PAYMENT_METHODS = [
-  { slug: "visa", alt: "Visa" },
-  { slug: "mastercard", alt: "Mastercard" },
-  { slug: "maestro", alt: "Maestro" },
-  { slug: "amex", alt: "American Express" },
-  { slug: "apple-pay", alt: "Apple Pay" },
-  { slug: "google-pay", alt: "Google Pay" },
-];
-
-const LEGAL_NOTICE =
-  "SAVE 4U is a trading name of SAVE 4U LTD, a company registered in England & Wales (CoN-15332365). VAT Registration No GB457 6350 70. We are registered under the Energy Broker Alternative Dispute Resolution (ADR) scheme, Reg No C35SAVE16. Registered office address: 764 Barking Road, London, England, E13 9PJ. Our business trading address: Metloc Business Centre, Unit 15 & 16, 37 Victoria Road, Romford, London, RM1 2LH.";
 
 const QUICK_LINKS = [
   { to: "/about", label: "About Us" },
@@ -69,23 +49,6 @@ export function Footer() {
               >
                 <Icon size={16} />
               </a>
-            ))}
-          </div>
-
-          <p className="mt-6 text-xs font-bold uppercase tracking-wide text-slate-400">We Accept</p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {PAYMENT_METHODS.map((method) => (
-              <span
-                key={method.slug}
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-white p-1.5 shadow-sm"
-              >
-                <img
-                  src={icon8Url(method.slug, 48, "color")}
-                  alt={method.alt}
-                  className="h-full w-full object-contain"
-                  loading="lazy"
-                />
-              </span>
             ))}
           </div>
         </div>
@@ -142,20 +105,6 @@ export function Footer() {
               </a>
             </li>
           </ul>
-
-          <div className="mt-6 flex items-center gap-3">
-            {COMPLIANCE_BADGES.map((badge) => (
-              <a
-                key={badge.alt}
-                href={badge.href}
-                target="_blank"
-                rel="noreferrer"
-                className="flex h-20 w-28 items-center justify-center rounded-xl bg-white p-3 shadow-sm transition-transform duration-200 hover:scale-105"
-              >
-                <img src={badge.src} alt={badge.alt} className="h-full w-full object-contain" loading="lazy" />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
 
@@ -182,13 +131,6 @@ export function Footer() {
               Admin Login
             </Link>
           </div>
-        </div>
-      </div>
-
-      <div className="border-t border-slate-800 bg-brand-navy/60">
-        <div className="container-page py-6 text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">Company Information</p>
-          <p className="mx-auto mt-2 max-w-4xl text-[11px] leading-relaxed text-slate-500">{LEGAL_NOTICE}</p>
         </div>
       </div>
     </footer>

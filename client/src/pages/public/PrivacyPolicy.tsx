@@ -72,7 +72,7 @@ export default function PrivacyPolicy() {
             <h2 className="font-heading text-lg font-bold text-slate-900">6. Contact Us</h2>
             <p className="mt-2">
               If you have any questions about this policy, please contact us at
-              support@save4u.co.uk or +44 2034884072.
+              support@save4u.co.uk or +44 7350 320196.
             </p>
           </section>
         </div>

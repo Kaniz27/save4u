@@ -1,13 +1,10 @@
-import { Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, MessageSquare, Headset, Check } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, MessageSquare, Headset, Check } from "lucide-react";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { LeadForm } from "@/components/services/LeadForm";
 import { TrustBadges } from "@/components/home/TrustBadges";
 import { FaqAccordion } from "@/components/services/FaqAccordion";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import { Icon8 } from "@/components/ui/Icon8";
-import { SplitText } from "@/components/ui/SplitText";
 import type { ServiceFaq } from "@/types";
 
 const CONTACT_BULLETS = ["We reply within one working day", "No cost, no obligation to switch", "Speak directly to a specialist"];
@@ -25,8 +22,9 @@ function ContactHero() {
             Get In Touch
           </span>
           <h1 className="h1-hero mt-6 text-brand-navy">
-            <SplitText as="span" className="block" text="Let's Talk About" delay={0.1} />
-            <SplitText as="span" className="block" text="Your Business" delay={0.3} />
+            Let's Talk About
+            <br />
+            Your Business
           </h1>
           <p className="mt-5 max-w-xl text-slate-600">
             Tell us what you're looking to improve and our team will help you find the right solution.
@@ -94,13 +92,12 @@ export default function ContactUs() {
     "Get in touch with the Save4u team — payments, funding and marketing enquiries welcome.",
   );
   const settings = useSiteSettings();
-  const infoRef = useScrollReveal<HTMLDivElement>({ selector: ".info-card" });
 
   const INFO_CARDS = [
-    { icon: "map-pin", label: "Our Address", value: settings.address },
-    { icon: "new-post", label: "Email Us", value: settings.contactEmail, href: `mailto:${settings.contactEmail}` },
-    { icon: "phone", label: "Call Us", value: settings.contactPhone, href: `tel:${settings.contactPhone.replace(/\s+/g, "")}` },
-    { icon: "clock", label: "Opening Hours", value: "Mon – Fri: 9:00am – 5:30pm" },
+    { icon: MapPin, label: "Our Address", value: settings.address },
+    { icon: Mail, label: "Email Us", value: settings.contactEmail, href: `mailto:${settings.contactEmail}` },
+    { icon: Phone, label: "Call Us", value: settings.contactPhone, href: `tel:${settings.contactPhone.replace(/\s+/g, "")}` },
+    { icon: Clock, label: "Opening Hours", value: "Mon – Fri: 9:00am – 5:30pm" },
   ];
 
   const SOCIALS = [
@@ -116,32 +113,23 @@ export default function ContactUs() {
       <ContactHero />
 
       <section id="contact-form" className="container-page py-16">
-        <div ref={infoRef} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {INFO_CARDS.map(({ icon, label, value, href }) => {
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {INFO_CARDS.map(({ icon: Icon, label, value, href }) => {
             const content = (
               <>
-                <span className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-brand-blue/10 transition-all duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:bg-brand-blue/20">
-                  <Icon8 slug={icon} alt={label} size={64} className="h-11 w-11" />
+                <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue-dark transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
+                  <Icon size={22} />
                 </span>
-                <p className="mt-4 text-xs font-bold uppercase tracking-wide text-brand-blue-dark transition-colors duration-300 group-hover:text-brand-navy">
-                  {label}
-                </p>
+                <p className="mt-4 text-xs font-bold uppercase tracking-wide text-brand-blue-dark">{label}</p>
                 <p className="mt-2 text-sm text-slate-700">{value}</p>
               </>
             );
             return href ? (
-              <a
-                key={label}
-                href={href}
-                className="info-card glass-card group cursor-pointer p-6 text-center hover:bg-white hover:shadow-glow-blue active:scale-95"
-              >
+              <a key={label} href={href} className="glass-card group p-6 text-center">
                 {content}
               </a>
             ) : (
-              <div
-                key={label}
-                className="info-card glass-card group cursor-default p-6 text-center hover:bg-white hover:shadow-glow-blue active:scale-95"
-              >
+              <div key={label} className="glass-card group p-6 text-center">
                 {content}
               </div>
             );

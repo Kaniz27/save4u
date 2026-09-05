@@ -1,6 +1,5 @@
 import { CreditCard, Zap, Banknote, Megaphone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { SplitText } from "@/components/ui/SplitText";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 // Free-license Unsplash photography — swap for real Save4u photography when available.
@@ -11,7 +10,7 @@ const SERVICES = [
     title: "Payment Solutions",
     description: "Accept payments in-store, online or on the go with secure, flexible payment solutions built around your business.",
     cta: "Explore Payment Solutions",
-    image: "https://images.unsplash.com/photo-1758686254082-0f91a27b3075?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
   },
   {
     to: "/merchant-cash-advance",
@@ -47,9 +46,7 @@ export function ServicesGrid() {
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Our Services</span>
-          <h2 className="mt-3 h2-section text-slate-900">
-            <SplitText as="span" text="Everything Your Business Needs to Grow" trigger="scroll" />
-          </h2>
+          <h2 className="mt-3 h2-section text-slate-900">Everything Your Business Needs to Grow</h2>
           <p className="mt-4 text-slate-600">Four powerful services. One trusted business partner.</p>
         </div>
 

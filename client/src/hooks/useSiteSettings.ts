@@ -4,7 +4,7 @@ import type { SiteSettings } from "@/types";
 
 const DEFAULT_SETTINGS: SiteSettings = {
   contactEmail: "support@save4u.co.uk",
-  contactPhone: "+44 2034884072",
+  contactPhone: "+44 7350 320196",
   address: "Metloc Business Centre, Unit 15 & 16, 37 Victoria Road, Romford, London, RM1 2LH",
   socialLinks: { facebook: "#", linkedin: "#", instagram: "#", twitter: "#" },
 };

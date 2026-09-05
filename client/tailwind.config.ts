@@ -34,9 +34,14 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        floatIn: {
+          "0%": { opacity: "0", transform: "translateY(14px) scale(0.75)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
       },
       animation: {
         marquee: "marquee 28s linear infinite",
+        "float-in": "floatIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both",
       },
     },
   },

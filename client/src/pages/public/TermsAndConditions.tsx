@@ -69,7 +69,7 @@ export default function TermsAndConditions() {
           <section>
             <h2 className="font-heading text-lg font-bold text-slate-900">6. Contact Us</h2>
             <p className="mt-2">
-              Questions about these terms can be sent to support@save4u.co.uk or +44 2034884072.
+              Questions about these terms can be sent to support@save4u.co.uk or +44 7350 320196.
             </p>
           </section>
         </div>

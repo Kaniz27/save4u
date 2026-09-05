@@ -48,9 +48,9 @@ export interface Review {
 
 export interface ServiceFeature {
   icon: string;
-  image?: string;
   title: string;
   description: string;
+  image?: string;
 }
 
 export interface ServiceStep {

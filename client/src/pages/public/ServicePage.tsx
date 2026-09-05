@@ -13,7 +13,6 @@ import { FaqAccordion } from "@/components/services/FaqAccordion";
 import { LeadForm } from "@/components/services/LeadForm";
 import { RelatedServices } from "@/components/services/RelatedServices";
 import { CtaBanner } from "@/components/home/CtaBanner";
-import { SplitText } from "@/components/ui/SplitText";
 import type { ServiceInterest } from "@/types";
 
 const ENQUIRY_POINTS = [
@@ -39,9 +38,9 @@ function NotFoundState() {
 // image/text HighlightList rows — flagged as placeholders in the README.
 const HIGHLIGHT_IMAGES: Record<string, string[]> = {
   "payment-solution": [
-    "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1742836531271-98fd8151d257?auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1758686254082-0f91a27b3075?auto=format&fit=crop&w=1000&q=80",
+    "https://www.takepayments.com/media/11phqqjy/card_machines_a920_pro_graphic-402x.png",
+    "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=80",
   ],
   "business-energy": [
     "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=80",
@@ -101,9 +100,7 @@ export default function ServicePage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <span className="text-sm font-bold uppercase tracking-wide text-brand-blue-dark">Get Started</span>
-            <h2 className="mt-3 h2-section text-slate-900">
-              <SplitText as="span" text={`Interested in ${service.name}?`} trigger="scroll" />
-            </h2>
+            <h2 className="mt-3 h2-section text-slate-900">Interested in {service.name}?</h2>
             <p className="mt-4 text-slate-600">
               Fill in your details and a specialist will get back to you — no obligation, no pressure, just clear
               advice on whether {service.name.toLowerCase()} makes sense for your business.
