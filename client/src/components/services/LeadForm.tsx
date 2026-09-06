@@ -37,7 +37,8 @@ export function LeadForm({
     setStatus("submitting");
     setErrorMessage("");
 
-    const form = new FormData(e.currentTarget);
+    const formEl = e.currentTarget;
+    const form = new FormData(formEl);
     const payload = {
       name: String(form.get("name") || ""),
       email: String(form.get("email") || ""),
@@ -51,7 +52,7 @@ export function LeadForm({
     try {
       await api.post("/leads", payload);
       setStatus("success");
-      e.currentTarget.reset();
+      formEl.reset();
     } catch (err) {
       setStatus("error");
       setErrorMessage(err instanceof ApiClientError ? err.message : "Something went wrong. Please try again.");

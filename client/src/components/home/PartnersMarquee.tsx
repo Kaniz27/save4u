@@ -5,6 +5,7 @@ import teya from "@/assets/partners/teya.jpeg";
 import gotCapital from "@/assets/partners/got-capital.jpeg";
 import crystalUtilities from "@/assets/partners/crystal-utilities.jpeg";
 import eposnow from "@/assets/partners/eposnow.jpeg";
+import clover from "@/assets/partners/clover.jpeg";
 import { SplitText } from "@/components/ui/SplitText";
 
 const PARTNERS = [
@@ -15,6 +16,7 @@ const PARTNERS = [
   { src: gotCapital, alt: "Got Capital" },
   { src: crystalUtilities, alt: "Crystal Utilities" },
   { src: eposnow, alt: "EposNow" },
+  { src: clover, alt: "Clover" },
 ];
 
 export function PartnersMarquee() {
