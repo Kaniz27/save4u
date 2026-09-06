@@ -20,6 +20,10 @@ export const env = {
   nodeEnv: process.env.NODE_ENV ?? "development",
   seedAdminEmail: process.env.SEED_ADMIN_EMAIL ?? "admin@save4u.co.uk",
   seedAdminPassword: process.env.SEED_ADMIN_PASSWORD ?? "ChangeMe123!",
+  // Optional one-time bootstrap tool (see authController.bootstrapAdmin) for
+  // creating/resetting an admin account when there's no other DB access.
+  // Leave unset in normal operation — the route 404s unless this is set.
+  setupAdminKey: process.env.SETUP_ADMIN_KEY ?? "",
   smtpHost: process.env.SMTP_HOST ?? "",
   smtpPort: Number(process.env.SMTP_PORT ?? 587),
   smtpUser: process.env.SMTP_USER ?? "",
