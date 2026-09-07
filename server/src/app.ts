@@ -16,10 +16,16 @@ import uploadRoutes from "./routes/uploadRoutes.js";
 
 const app = express();
 
+// Known production frontend origin, always allowed regardless of how
+// CLIENT_URL is configured on the host — avoids CORS breaking in prod
+// if that env var is missing or out of date.
+const KNOWN_CLIENT_ORIGINS = ["https://save4u-client.vercel.app"];
+const allowedOrigins = new Set([...env.clientUrls, ...KNOWN_CLIENT_ORIGINS]);
+
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || env.clientUrls.includes(origin)) {
+      if (!origin || allowedOrigins.has(origin)) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
