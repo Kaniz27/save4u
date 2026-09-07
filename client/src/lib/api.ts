@@ -1,6 +1,9 @@
 import type { ApiResponse } from "@/types";
 
-const BASE_URL = import.meta.env.VITE_API_URL || "/api";
+// Normalize so a VITE_API_URL set to just the backend's origin (missing the
+// "/api" suffix) still resolves correctly, instead of 404-ing every request.
+const rawBaseUrl = (import.meta.env.VITE_API_URL || "/api").replace(/\/+$/, "");
+const BASE_URL = rawBaseUrl.endsWith("/api") ? rawBaseUrl : `${rawBaseUrl}/api`;
 
 export class ApiClientError extends Error {
   status: number;
