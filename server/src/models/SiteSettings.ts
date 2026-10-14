@@ -4,6 +4,7 @@ const siteSettingsSchema = new Schema(
   {
     contactEmail: { type: String, default: "support@save4u.co.uk" },
     contactPhone: { type: String, default: "+44 7350 320196" },
+    landlinePhone: { type: String, default: "020 8711 0526" },
     address: {
       type: String,
       default: "Metloc Business Centre, Unit 15 & 16, 37 Victoria Road, Romford, London, RM1 2LH",

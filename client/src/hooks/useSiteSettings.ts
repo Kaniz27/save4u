@@ -5,6 +5,7 @@ import type { SiteSettings } from "@/types";
 const DEFAULT_SETTINGS: SiteSettings = {
   contactEmail: "support@save4u.co.uk",
   contactPhone: "+44 7350 320196",
+  landlinePhone: "020 8711 0526",
   address: "Metloc Business Centre, Unit 15 & 16, 37 Victoria Road, Romford, London, RM1 2LH",
   socialLinks: { facebook: "#", linkedin: "#", instagram: "#", twitter: "#" },
 };
@@ -15,7 +16,7 @@ export function useSiteSettings(): SiteSettings {
   useEffect(() => {
     api
       .get<SiteSettings>("/settings")
-      .then((data) => setSettings(data && data.contactPhone ? data : DEFAULT_SETTINGS))
+      .then((data) => setSettings(data && data.contactPhone ? { ...DEFAULT_SETTINGS, ...data } : DEFAULT_SETTINGS))
       .catch(() => setSettings(DEFAULT_SETTINGS));
   }, []);
 

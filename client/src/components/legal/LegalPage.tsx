@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { CalendarDays, ChevronDown, FileText, Mail, Phone, ShieldCheck, Cookie, ArrowRight, type LucideIcon } from "lucide-react";
+import { CalendarDays, ChevronDown, FileText, Mail, Phone, PhoneCall, ShieldCheck, Cookie, ArrowRight, type LucideIcon } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { SplitText } from "@/components/ui/SplitText";
@@ -211,6 +211,15 @@ export function LegalPage({ title, intro, lastUpdated, heroImage, sections, high
                   <Mail size={16} className="text-brand-blue" />
                   {settings.contactEmail}
                 </a>
+                {settings.landlinePhone && (
+                  <a
+                    href={`tel:${settings.landlinePhone.replace(/\s+/g, "")}`}
+                    className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-white/20"
+                  >
+                    <PhoneCall size={16} className="text-brand-blue" />
+                    Landline: {settings.landlinePhone}
+                  </a>
+                )}
                 <a
                   href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`}
                   className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-white/20"

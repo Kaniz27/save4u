@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram, Twitter, ArrowRight } from "lucide-react";
+import { Mail, Phone, PhoneCall, MapPin, Facebook, Linkedin, Instagram, Twitter, ArrowRight } from "lucide-react";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
@@ -99,10 +99,18 @@ export function Footer() {
                 {settings.contactEmail}
               </a>
             </li>
+            {settings.landlinePhone && (
+              <li className="flex gap-3">
+                <PhoneCall size={18} className="shrink-0 text-brand-blue" />
+                <a href={`tel:${settings.landlinePhone.replace(/\s+/g, "")}`} className="hover:text-brand-blue">
+                  <span className="text-slate-500">Landline:</span> {settings.landlinePhone}
+                </a>
+              </li>
+            )}
             <li className="flex gap-3">
               <Phone size={18} className="shrink-0 text-brand-blue" />
               <a href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`} className="hover:text-brand-blue">
-                {settings.contactPhone}
+                <span className="text-slate-500">Mobile:</span> {settings.contactPhone}
               </a>
             </li>
           </ul>

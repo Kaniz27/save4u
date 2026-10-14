@@ -27,6 +27,7 @@ export default function Settings() {
     const payload: SiteSettings = {
       contactEmail: String(form.get("contactEmail") || ""),
       contactPhone: String(form.get("contactPhone") || ""),
+      landlinePhone: String(form.get("landlinePhone") || ""),
       address: String(form.get("address") || ""),
       socialLinks: {
         facebook: String(form.get("facebook") || ""),
@@ -57,8 +58,12 @@ export default function Settings() {
             <input name="contactEmail" type="email" defaultValue={settings.contactEmail} className="input" required />
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium text-slate-700">Contact Phone</label>
+            <label className="mb-1 block text-sm font-medium text-slate-700">Mobile / WhatsApp</label>
             <input name="contactPhone" defaultValue={settings.contactPhone} className="input" required />
+          </div>
+          <div>
+            <label className="mb-1 block text-sm font-medium text-slate-700">Office Landline</label>
+            <input name="landlinePhone" defaultValue={settings.landlinePhone} className="input" placeholder="020 8711 0526" />
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-slate-700">Address</label>

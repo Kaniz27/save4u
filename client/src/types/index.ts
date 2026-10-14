@@ -99,6 +99,7 @@ export interface SiteSettings {
   _id?: string;
   contactEmail: string;
   contactPhone: string;
+  landlinePhone: string;
   address: string;
   socialLinks: {
     facebook: string;

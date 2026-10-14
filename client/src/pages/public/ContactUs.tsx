@@ -1,4 +1,5 @@
-import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, MessageSquare, Headset, Check } from "lucide-react";
+import { Mail, Phone, PhoneCall, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, MessageSquare, Headset, Check, ShieldCheck, FileText, Cookie } from "lucide-react";
+import { Link } from "react-router-dom";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { LeadForm } from "@/components/services/LeadForm";
@@ -96,7 +97,10 @@ export default function ContactUs() {
   const INFO_CARDS = [
     { icon: MapPin, label: "Our Address", value: settings.address },
     { icon: Mail, label: "Email Us", value: settings.contactEmail, href: `mailto:${settings.contactEmail}` },
-    { icon: Phone, label: "Call Us", value: settings.contactPhone, href: `tel:${settings.contactPhone.replace(/\s+/g, "")}` },
+    ...(settings.landlinePhone
+      ? [{ icon: PhoneCall, label: "Landline", value: settings.landlinePhone, href: `tel:${settings.landlinePhone.replace(/\s+/g, "")}` }]
+      : []),
+    { icon: Phone, label: "Mobile / WhatsApp", value: settings.contactPhone, href: `tel:${settings.contactPhone.replace(/\s+/g, "")}` },
     { icon: Clock, label: "Opening Hours", value: "Mon – Fri: 9:00am – 5:30pm" },
   ];
 
@@ -113,7 +117,7 @@ export default function ContactUs() {
       <ContactHero />
 
       <section id="contact-form" className="container-page py-16">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {INFO_CARDS.map(({ icon: Icon, label, value, href }) => {
             const content = (
               <>
@@ -134,6 +138,24 @@ export default function ContactUs() {
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
+          <span className="text-slate-500">Before you get in touch, read our:</span>
+          {[
+            { to: "/privacy-policy", label: "Privacy Policy", icon: ShieldCheck },
+            { to: "/terms-and-condition", label: "Terms & Conditions", icon: FileText },
+            { to: "/cookie-policy", label: "Cookie Policy", icon: Cookie },
+          ].map(({ to, label, icon: Icon }) => (
+            <Link
+              key={to}
+              to={to}
+              className="inline-flex items-center gap-1.5 rounded-full border border-brand-border bg-white px-4 py-1.5 font-semibold text-brand-blue-dark transition-colors hover:border-brand-blue hover:bg-brand-blue/5"
+            >
+              <Icon size={14} />
+              {label}
+            </Link>
+          ))}
         </div>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-2">

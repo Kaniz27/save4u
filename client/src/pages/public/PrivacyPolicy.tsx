@@ -58,7 +58,7 @@ function RightsGrid() {
   );
 }
 
-function buildSections(email: string, phone: string, address: string): LegalSection[] {
+function buildSections(email: string, phone: string, landline: string, address: string): LegalSection[] {
   const mail = <a href={`mailto:${email}`}>{email}</a>;
 
   return [
@@ -78,7 +78,13 @@ function buildSections(email: string, phone: string, address: string): LegalSect
             <br />
             <strong>Email:</strong> {mail}
             <br />
-            <strong>Phone:</strong> {phone}
+            {landline && (
+              <>
+                <strong>Office:</strong> {landline}
+                <br />
+              </>
+            )}
+            <strong>Mobile / WhatsApp:</strong> {phone}
           </p>
         </>
       ),
@@ -324,7 +330,7 @@ export default function PrivacyPolicy() {
         </p>
       }
       highlights={HIGHLIGHTS}
-      sections={buildSections(settings.contactEmail, settings.contactPhone, settings.address)}
+      sections={buildSections(settings.contactEmail, settings.contactPhone, settings.landlinePhone, settings.address)}
     />
   );
 }

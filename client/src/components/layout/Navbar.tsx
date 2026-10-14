@@ -58,7 +58,7 @@ export function Navbar() {
 
           <div className="hidden items-center gap-3 md:flex">
             <a
-              href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`}
+              href={`tel:${(settings.landlinePhone || settings.contactPhone).replace(/\s+/g, "")}`}
               className="inline-flex items-center gap-2 rounded-full border border-brand-blue/40 px-5 py-3 text-sm font-semibold text-brand-blue-dark transition-colors hover:bg-brand-blue/10"
             >
               <Phone size={16} />

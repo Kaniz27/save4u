@@ -5,10 +5,12 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { LiveChatWidget } from "@/components/layout/LiveChatWidget";
 import { CookieConsent } from "@/components/layout/CookieConsent";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 
 export function PublicLayout() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollToTop />
       <TopBar />
       <Navbar />
       <main className="flex-1 pt-[124px]">

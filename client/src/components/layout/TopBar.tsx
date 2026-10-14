@@ -1,4 +1,4 @@
-import { Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Phone, PhoneCall, Mail, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 export function TopBar() {
@@ -9,6 +9,15 @@ export function TopBar() {
       <div className="container-page flex h-full items-center justify-between">
         <div className="hidden items-center gap-5 text-sm md:flex">
           <span className="text-slate-400">Sales &amp; Support Enquiry</span>
+          {settings.landlinePhone && (
+            <a
+              href={`tel:${settings.landlinePhone.replace(/\s+/g, "")}`}
+              className="flex items-center gap-1.5 font-medium text-white transition-colors hover:text-brand-blue"
+            >
+              <PhoneCall size={13} className="text-brand-blue" />
+              <span className="text-slate-400">Landline:</span> {settings.landlinePhone}
+            </a>
+          )}
           <a
             href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`}
             className="flex items-center gap-1.5 font-medium text-white transition-colors hover:text-brand-blue"
