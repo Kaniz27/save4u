@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { PublicLayout } from "@/layouts/PublicLayout";
 import { ProtectedRoute } from "./ProtectedRoute";
 
@@ -10,6 +10,7 @@ import ServicePage from "@/pages/public/ServicePage";
 import ContactUs from "@/pages/public/ContactUs";
 import PrivacyPolicy from "@/pages/public/PrivacyPolicy";
 import TermsAndConditions from "@/pages/public/TermsAndConditions";
+import CookiePolicy from "@/pages/public/CookiePolicy";
 import NotFound from "@/pages/public/NotFound";
 
 // Admin panel (incl. Recharts) is code-split from the public bundle — it's
@@ -42,6 +43,8 @@ export function AppRouter() {
         <Route path="contact-us" element={<ContactUs />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="terms-and-condition" element={<TermsAndConditions />} />
+        <Route path="terms-and-conditions" element={<Navigate to="/terms-and-condition" replace />} />
+        <Route path="cookie-policy" element={<CookiePolicy />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 

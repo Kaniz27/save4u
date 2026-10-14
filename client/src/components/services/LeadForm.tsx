@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { Link } from "react-router-dom";
 import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { api, ApiClientError } from "@/lib/api";
 import { SERVICE_LABELS } from "@/lib/utils";
@@ -155,6 +156,17 @@ export function LeadForm({
             {status === "submitting" && <Loader2 size={16} className="animate-spin" />}
             {status === "submitting" ? "Sending…" : "Send Enquiry"}
           </button>
+          <p className="mt-3 text-xs text-slate-500">
+            By submitting this form you agree to our{" "}
+            <Link to="/terms-and-condition" className="font-semibold text-brand-blue-dark hover:underline">
+              Terms &amp; Conditions
+            </Link>{" "}
+            and{" "}
+            <Link to="/privacy-policy" className="font-semibold text-brand-blue-dark hover:underline">
+              Privacy Policy
+            </Link>
+            .
+          </p>
         </div>
       </form>
     </div>

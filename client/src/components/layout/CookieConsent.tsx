@@ -3,14 +3,14 @@ import { Cookie } from "lucide-react";
 import { Link } from "react-router-dom";
 import { gsap } from "@/lib/gsap";
 
-const STORAGE_KEY = "save4u_cookie_consent";
+export const COOKIE_CONSENT_KEY = "save4u_cookie_consent";
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (localStorage.getItem(STORAGE_KEY)) return;
+    if (localStorage.getItem(COOKIE_CONSENT_KEY)) return;
     const timer = setTimeout(() => setVisible(true), 900);
     return () => clearTimeout(timer);
   }, []);
@@ -25,7 +25,7 @@ export function CookieConsent() {
   }, [visible]);
 
   const dismiss = (choice: "accepted" | "declined") => {
-    localStorage.setItem(STORAGE_KEY, choice);
+    localStorage.setItem(COOKIE_CONSENT_KEY, choice);
     if (!ref.current) {
       setVisible(false);
       return;
@@ -56,8 +56,8 @@ export function CookieConsent() {
           <p className="font-heading text-sm font-bold text-brand-navy">We use cookies</p>
           <p className="mt-1.5 text-xs leading-relaxed text-slate-600">
             We use cookies to run this site and understand how it's used. See our{" "}
-            <Link to="/privacy-policy" className="font-semibold text-brand-blue-dark hover:underline">
-              Privacy Policy
+            <Link to="/cookie-policy" className="font-semibold text-brand-blue-dark hover:underline">
+              Cookie Policy
             </Link>{" "}
             for details.
           </p>

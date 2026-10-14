@@ -9,7 +9,8 @@ const QUICK_LINKS = [
   { to: "/why-choose-us", label: "Why Choose Us" },
   { to: "/contact-us", label: "Contact Us" },
   { to: "/privacy-policy", label: "Privacy Policy" },
-  { to: "/terms-and-condition", label: "Terms & Condition" },
+  { to: "/terms-and-condition", label: "Terms & Conditions" },
+  { to: "/cookie-policy", label: "Cookie Policy" },
 ];
 
 const SERVICE_LINKS = [
@@ -120,12 +121,15 @@ export function Footer() {
       <div className="border-t border-slate-800">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-slate-500 sm:flex-row">
           <p>© {year} Save4u. All rights reserved.</p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link to="/privacy-policy" className="hover:text-brand-blue">
               Privacy Policy
             </Link>
             <Link to="/terms-and-condition" className="hover:text-brand-blue">
-              Terms & Condition
+              Terms & Conditions
+            </Link>
+            <Link to="/cookie-policy" className="hover:text-brand-blue">
+              Cookie Policy
             </Link>
             <Link to="/admin/login" className="hover:text-brand-blue">
               Admin Login
