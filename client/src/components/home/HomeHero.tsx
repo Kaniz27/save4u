@@ -14,14 +14,14 @@ export function HomeHero() {
       <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-brand-blue/25 blur-3xl" />
       <div className="pointer-events-none absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-brand-orange/15 blur-3xl" />
 
-      <div className="container-page relative grid gap-12 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
+      <div className="container-page relative grid gap-12 pb-20 pt-10 lg:grid-cols-2 lg:items-center lg:pb-28 lg:pt-14">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-blue/30 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-blue-dark shadow-sm backdrop-blur-sm">
             <Sparkles size={14} />
             Helping UK Businesses Grow Smarter
           </span>
 
-          <h1 className="h1-hero mt-6 text-brand-navy">
+          <h1 className="mt-6 font-heading text-[32px] font-extrabold leading-[1.1] text-brand-navy sm:text-[44px] lg:text-[56px]">
             Payments, Funding &amp; Marketing —<br className="hidden sm:block" /> All Working for Your Business
           </h1>
 
